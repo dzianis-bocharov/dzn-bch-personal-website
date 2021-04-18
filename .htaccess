@@ -1,0 +1,14 @@
+
+#Maintenance Mode
+#RewriteEngine On
+#RewriteCond %{REMOTE_ADDR} !^67\.87\.72\.91
+#RewriteCond %{REQUEST_URI} !^/maintenance.php$ [NC]
+#RewriteRule ^(.*)$ /maintenance.php [R=302,L]
+
+# Normal Mode
+RewriteEngine on
+RewriteCond %{HTTPS} off
+RewriteCond %{HTTP:X-Forwarded-SSL} !on
+RewriteCond %{HTTP_HOST} ^dzianis\-bocharov\.com$ [OR]
+RewriteCond %{HTTP_HOST} ^www\.dzianis\-bocharov\.com$
+RewriteRule ^/?$ "https\:\/\/www\.dzianis\-bocharov\.com\/" [R=301,L]
