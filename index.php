@@ -33,7 +33,7 @@
                 }
             );
         </script>
-        <title>Dzianis Bocharov Front End Web Developer From New York City</title>
+        <title>Dzianis Bocharov - Front End Web Developer</title>
         <style>
             @media only screen and (max-width: 992px) {
                 div.binContact{
@@ -620,7 +620,7 @@
                     <span class='myBold'>Part Time Warehouse Agent JFK | DHL Express, New York City, USA | November 2020 - Now</span>
                     <br>
                     <ul>
-                        <li class='liAbout'>loading and unloading containers;;</li>
+                        <li class='liAbout'>loading and unloading containers;</li>
                         <li class='liAbout'>sorting of packages</li>                    
                     </ul> 
                     <br>
@@ -754,7 +754,7 @@
         </div>
         <footer id='binFooter'>
             <hr id='footerLine'>
-            <div id='divFooter'>© 2020 Dzianis Bocharov</div>
+            <div id='divFooter'>© 2021 Dzianis Bocharov</div>
         </footer>
     </body>
 </html>
