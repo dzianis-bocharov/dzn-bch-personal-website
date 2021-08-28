@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+        <meta http-equiv="Content-Type" content="text/html;" charset="windows-1252">
         <meta content="width=device-width, initial-scale=1" name="viewport">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="description" content="Personal website of Dzianis Bocharov front end web developer from New York City.">

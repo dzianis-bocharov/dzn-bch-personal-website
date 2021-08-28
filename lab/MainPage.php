@@ -1,15 +1,27 @@
 <!DOCTYPE html>
 <html>
 	<head>
-	    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
-		<title>LABORATORY</title>
+		
+	    <meta charset="utf-8">
+		<meta content="width=device-width, initial-scale=1" name="viewport">
+		<title>lab</title>
+
+		<!--Bootstrap / подключение-->
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 
 		<style>
 			body {
 				background-color: grey;
 				line-height: normal;
+				font-family: TimesNewRoman;
 			}
-			h1 {color: white;}
+			h1 {
+				color: white;
+				font-weight: bold;
+			}
 			button {
 				font-size: 16px;
 			    width: 300px;
@@ -17,7 +29,7 @@
 				margin: 5px;
 			}
 	        body {font-size: 18px}
-	        div#fuck1 {
+	        div#duck1 {
 	            color: white;
 	            height: 35px;
 	            width: 200px;
@@ -38,7 +50,7 @@
                  body {
                      font-size: 50px;
                  }
-                 div#fuck1 {
+                 div#duck123 {
                      height: 70px;
                      width: 400px;
                      padding: 10px;
@@ -48,21 +60,21 @@
 				width:400px;
 				float: left;
 			}
-			#xyz1 {
+			/*#xyz1 {
 				width: 500px;
-			}
+			}*/
 			#xyz2 {
 				margin-top: 10px;
 			};
-			a:link {
-  				color: blue;
+			/*a:link {
+  				color: green;
 			}
 			a:visited {
   				color: blue;
 			}
 			a:hover {
   				color: blue;
-			}
+			}*/
 		</style>
 		<!--стили для тогла как для айфона-->
 		<style>
@@ -98,7 +110,7 @@
 				transition: .4s;
 			}
 			input:checked + #slider {
-				background-color: #2196F3;
+				background-color: green;
 				
 			}
 			input:checked + span #circle {
@@ -111,6 +123,8 @@
 			#circle {
 				border-radius: 50%;
 			} 
+
+
  		</style>
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 		<link rel='shortcut icon' type='image/ico' href='favicon-lab.ico'>
@@ -124,52 +138,233 @@
 		</script>
 		<script>
 		    var x1 = window.innerWidth;
-		    document.getElementById('fuck1').innerText = x1;
+		    document.getElementById('duck1').innerText = x1;
 		    alert(x1);
 		</script>
+		<style>
+			div {/*border: 2px solid white;*/}
+			div#lab {
+				padding-top: 35px;
+				padding-bottom: 20px;
+				padding-left: 15px;
+
+			}
+			h1 {
+				font-size: 45px;
+			}
+			div#first, div#second {
+				border-right: solid white 4px;
+			}
+			div#mySlider1 {
+				margin-top: 15px;
+				margin-bottom: 0px;
+			}
+			span#wood {
+				/*margin-top: 25px;*/
+			}
+			button {
+				margin-bottom: 15px;
+				/*margin-left: auto;
+				margin-right: auto;*/
+				position: relative;
+				left: 50%;
+				transform: translate(-50%, 0);
+				margin-left: 0px;
+			}
+			div#myDivSwitch {
+				margin-top: 5px;
+			}
+			body {
+				color: white;
+			}
+			div#MethodSearchTool {
+				padding: 5px;
+				border: 2px solid white;
+				margin-top: 5px;
+				background-color: grey;
+				height: 345px;
+			}
+			legend {
+				text-decoration: underline;
+			}
+			label.myForm {
+				display: block;
+				float: left;
+				width: 80px;
+				height: 15px;
+			}
+		</style>
 	</head>
 	<body>
-	    <h1>ЛАБОРАТОРИЯ</h1>
-		<div id='box1'>
-			<div id='can1'>
-				<img id='dick' src='Test.jpg' usemap='#fuckyoubitch'>
-				<button class='fuck' title='fuck you' id='z'>Код форума на PHP&MySQL</button>
-				<button class='fuck'>Вибрация джойстика</button>
-				<button class='fuck'>Подвижный восьмигранник</button>
-				<div id='xyz1'>
-					<audio controls id='xyz2'> <source src='MJ.mp3' type='audio/mp3'></audio>
+		<div class='container'>
+			<div class='row'>
+				<div id='lab'><h1>ЛАБОРАТОРИЯ</h1></div>
+				<div class='w-100'></div>
+				<div class='col' class='c1' id='first'>
+					<style>
+						#matrixGIF {
+						width: 265px;
+						margin-bottom: 35px;
+						margin-top: 5px;
+					}			
+					</style>
+					<img id='matrixGIF' src='matrix123.gif'></img>
+					<br>
+					<div id='xyz1'>
+						<audio controls id='xyz2'> <source src='faint.mp3' type='audio/mp3'></audio>
+					</div>
+					<br>
+					<div id='mySlider1'>
+						Maintenance Mode
+						<br>
+						<div id='myDivSwitch'>
+						<label class='switch'>
+							<input id='test1' type='checkbox'>
+							<span id='slider'>
+								<span id='circle'></span>
+							</span>
+						</label>
 				</div>
-				<a href=http://smolyar.by/WEB/PHP/PHP-Test.php>PHP - Тест</a>
-				<br>
-				<a href=ReactTest/ReactTestHTML.html>React - Тест</a>
-				<br>
-				<div>MySQL</div>
-				<input>
-				<br>
-				Maintenance Mode
-				<br>
-				<label class='switch'>
-					<input id='test1' type='checkbox'>
-					<span id='slider'>
-						<span id='circle'></span>
-					</span>
-				</label>
+				</div>
+				</div>
+				<div class='col' class='c1' id='second'>
+					<button  title='duck you' id='z'>PHP&MySQL / форум</button>
+					<br>
+					<button>Canvas / рисование</button>
+					<br>
+					<button>Вибрация джойстика</button>
+					<style>
+						a:link {
+							color: #0000EE;
+							text-decoration: underline;
+						}
+						a:visited {
+							/*color: purple;*/
+							color: #0000EE;
+						}
+						a#a1 {
+							margin-left: 25px;
+						}
+					</style>
+					<a id='a1' href='https://www.google.com/'>Content Management System</a>
+					<br>
+					<br>
+					<a id='a1' href='https://www.google.com/'>Управляемый Квадрат</a>
+					<br>
+					<br>
+					<a id='a1' href='chartjs-learn/my-chartjs-index.html'>Chart.js - Contributing</a>
+					<br>
+					<br>
+					<a id='a1' href='logInPage.php'>Log In / дизайн страницы</a>
+					<br>
+					<br>
+					<a id='a1' href='https://www.google.com/'>Тест#1</a>
+				</div>
+				<div class='col' class='c1'>
+					<!--*******************************************************************************************-->
+<!--******************METHOD SEARCH TOOL*************************************************-->
+<!--*******************************************************************************************-->
+			
+			<style>
+				#MethodSearchTool {width: 320px;}
+				/**.myField {
+					clear: both;
+					text-align: right;
+					width: 200px;
+				}
+				label {float:left;}*/
+				output {
+					width: 50px;
+					background-color: red;
+				}
+				form div {
+					text-align: center;
+				}
+				div#divRequest {
+					margin-top: -4px;
+					margin-bottom: 5px;
+				}
+				div#divResult {
+					margin: 5px;
+				}
+				fieldset legend {
+					text-align: center;
+				} 	
+				input#btn-go {
+					width: 75px;
+					margin-top: 5px;
+					height: 50px;
+					display:block;
+					margin:0 auto;
+					margin-top: 5px;
+					box-shadow: 1px 1px;
+				}	
+				output.my-output1 {
+					width: 221px;
+					height: 25px;
+					background-color: lime;
+				}	
+				*.myField {
+					width: 222px;
+					height: 27px;
+				}
+				#myFile1 {
+					color: grey;
+					font-style: italic;
+					width: 150px;
+					margin-right: 0;
+					background-color: white;
+					height: 25px;
+					margin-bottom: 1px;
+					margin-left: 1px;
+				}
+				input#MyBrowse {
+					width: 69px;
+					height: 27px;
+					margin-left: 2px;
+					margin-top: -1px;
+					position: absolute;
+				}
+			</style>
+
+			<script>
+
+			</script>
+
+			<div id='MethodSearchTool'>
+				<form>
+					<fieldset>
+						<legend>Method Search Tool</legend>
+						<div id='divRequest'>---request---</div>
+						<label class='myForm'>file</label>
+						<output id='myFile1' value='Upload The File'>Upload The File</output>
+						<input type='button' id='MyBrowse' value='Browse'>
+						<label class='myForm'>line#</label>
+						<input class='myField'>
+						<label class='myForm'>method</label>
+						<input class='myField'>
+						<input type='submit' value='GO' id='btn-go'>
+						<div id='divResult'>---result---</div>
+						<label class='myForm'>file</label>
+						<output class='my-output1'></output>
+						<label class='myForm'>line#</label>
+						<output class='my-output1' value='fuck'></output>
+						<label class='myForm'>method</label>
+						<output class='my-output1'></output>
+					</fieldset>
+				</form>
+			</div>
+
+			<script>
+
+			</script>
+
+<!--*******************************************************************************************-->
+<!--*******************************************************************************************-->
+<!--*******************************************************************************************-->
+				</div>
 			</div>
 		</div>
-<!--***********************************************************************************************************************-->
-<!--***********************************************************************************************************************-->
-<!--***********************************************************************************************************************-->
-
-<br>
-
-<div>
-золото / цена / график / 2011 - 2019 гг.
-</div>
-
-
-<!--***********************************************************************************************************************-->
-<!--***********************************************************************************************************************-->
-<!--***********************************************************************************************************************-->
 	</body>
 
 </html>
