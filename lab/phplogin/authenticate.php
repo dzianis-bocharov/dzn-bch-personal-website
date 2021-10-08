@@ -3,7 +3,7 @@
 session_start();
 
 // Change this to your connection info.
-$DATABASE_HOST = 'https://www.dzianis-bocharov.com'; //localhost/
+$DATABASE_HOST = 'localhost';
 $DATABASE_USER = 'smolyarb_admin';
 $DATABASE_PASS = 'Bocharov#1982';
 $DATABASE_NAME = 'smolyarb_phplogin';
