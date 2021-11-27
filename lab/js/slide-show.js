@@ -29,10 +29,13 @@ $(document).ready(function(){
         };
 
         function _disableControls() {
+<<<<<<< HEAD
             if (itemInfo.position.current > 0 && itemInfo.position.current < itemInfo.position.max) {
                 buttonPrev.disabled = false;
                 buttonNext.disabled = false;
             };
+=======
+>>>>>>> 230a22f (slide-show 100% works)
             if (itemInfo.position.current == 0) {
                 buttonPrev.disabled = true;
                 buttonNext.disabled = false;

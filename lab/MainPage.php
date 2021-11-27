@@ -154,13 +154,16 @@
 				document.getElementById('z').onclick = myFunction1;
 			});
 		</script>
+<<<<<<< HEAD
 		<script>
 		    var x1 = window.innerWidth;
 		    document.getElementById('duck1').innerText = x1;
 		    alert(x1);
 		</script>
+=======
+		<script type='text/javascript' src='js/slide-show.js'></script>
+>>>>>>> 230a22f (slide-show 100% works)
 		<style>
-			div {/*border: 2px solid white;*/}
 			div#lab {
 				padding-top: 30px;
 				padding-bottom: 15px;
@@ -298,6 +301,7 @@
 				</div>
 				</div>
 				<div class='col' class='c1' id='second'>
+<<<<<<< HEAD
 					<button  title='duck you' id='z' class="lab1">PHP&MySQL / форум</button>
 					<br>
 					<button class="lab1">Canvas / рисование</button>
@@ -321,6 +325,46 @@
 						<div id='labPages'><button><</button><span class='mySpan'> 1 </span>из<span class='mySpan'> 3 </span><button>></button></div>
 					</div>
 				</div>
+=======
+
+				<div id='slideShowContainer'>
+					<div id='slideMover'>
+						<div id='slidesWrapper'>
+							<div class='slideElement'>
+
+								<a id='a1' href='https://www.google.com/'>JavaScript / файл / список функций</a>
+								<br>
+								<br>
+								<a id='a1' href='https://www.google.com/'>Управляемый квадрат</a> 
+								<br>
+								<br>
+								<a id='a1' href='chartjs-learn/my-chartjs-index.html'>Gold / price / chart</a>
+								<br>
+								<br>
+								<a id='a1' href='aim-star/aim-star-index.html'>Aim / тренировка</a>
+								<br>
+								<br>
+								<a id='a1' href='php-file-size/php-file-size.php'>PHP / размер файла</a>								
+							</div>
+							<div class='slideElement'>
+								<a id='a1' href='https://www.google.com/'>Content Management System</a>
+							</div>
+							<div class='slideElement'>
+								<a id='a1' href='https://www.google.com/'>Test#1</a>
+							</div> 
+						</div>
+					</div>
+					<div id='controls'>
+						<button id='btnPrev'>&#60;</button>
+						<div id='pagesInfo'>
+							<span id='currentPage' class='sliderPages'></span> из <span id='pagesAll' class='sliderPages'></span>
+						</div>
+						<button id='btnNext'>&#62;</button>
+					</div>
+				</div>
+					
+				</div>
+>>>>>>> 230a22f (slide-show 100% works)
 				<div class='col' class='c1'>
 					<!--*******************************************************************************************-->
 <!--******************METHOD SEARCH TOOL*************************************************-->
