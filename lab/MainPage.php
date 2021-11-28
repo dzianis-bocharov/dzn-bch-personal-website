@@ -155,11 +155,15 @@
 			});
 		</script>
 <<<<<<< HEAD
+<<<<<<< HEAD
 		<script>
 		    var x1 = window.innerWidth;
 		    document.getElementById('duck1').innerText = x1;
 		    alert(x1);
 		</script>
+=======
+		<script type='text/javascript' src='js/slide-show.js'></script>
+>>>>>>> 230a22f (slide-show 100% works)
 =======
 		<script type='text/javascript' src='js/slide-show.js'></script>
 >>>>>>> 230a22f (slide-show 100% works)
@@ -302,6 +306,7 @@
 				</div>
 				<div class='col' class='c1' id='second'>
 <<<<<<< HEAD
+<<<<<<< HEAD
 					<button  title='duck you' id='z' class="lab1">PHP&MySQL / форум</button>
 					<br>
 					<button class="lab1">Canvas / рисование</button>
@@ -326,6 +331,8 @@
 					</div>
 				</div>
 =======
+=======
+>>>>>>> 230a22f (slide-show 100% works)
 
 				<div id='slideShowContainer'>
 					<div id='slideMover'>
