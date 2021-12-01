@@ -144,6 +144,9 @@
 				padding: 5px 3px 5px 7px;
 			}
  		</style>
+
+		<link rel='stylesheet' href='css/slide-show.css'>
+
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 		<link rel='shortcut icon' type='image/ico' href='favicon-lab.ico'>
 		<script>
@@ -154,9 +157,7 @@
 				document.getElementById('z').onclick = myFunction1;
 			});
 		</script>
-
 		<script type='text/javascript' src='js/slide-show.js'></script>
-
 		<style>
 			div#lab {
 				padding-top: 30px;
@@ -254,6 +255,9 @@
 				left: 50%;
 				margin-left: -75px;
 			}
+			a#shutdown-a {
+				margin-left: 25px;
+			}
 		</style>
 	</head>
 	<body>
@@ -337,6 +341,15 @@
 					
 				</div>
 				<div class='col' class='c1'>
+
+
+
+			<button id='z' class="lab1">PHP&MySQL / форум</button>
+					<br>
+					<button class="lab1">Canvas / рисование</button>
+					<br>
+					<button class="lab1">Вибрация джойстика</button>
+
 			<br>
 
 	
