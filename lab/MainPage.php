@@ -154,19 +154,9 @@
 				document.getElementById('z').onclick = myFunction1;
 			});
 		</script>
-<<<<<<< HEAD
-<<<<<<< HEAD
-		<script>
-		    var x1 = window.innerWidth;
-		    document.getElementById('duck1').innerText = x1;
-		    alert(x1);
-		</script>
-=======
+
 		<script type='text/javascript' src='js/slide-show.js'></script>
->>>>>>> 230a22f (slide-show 100% works)
-=======
-		<script type='text/javascript' src='js/slide-show.js'></script>
->>>>>>> 230a22f (slide-show 100% works)
+
 		<style>
 			div#lab {
 				padding-top: 30px;
@@ -305,44 +295,16 @@
 				</div>
 				</div>
 				<div class='col' class='c1' id='second'>
-<<<<<<< HEAD
-<<<<<<< HEAD
-					<button  title='duck you' id='z' class="lab1">PHP&MySQL / форум</button>
-					<br>
-					<button class="lab1">Canvas / рисование</button>
-					<br>
-					<button class="lab1">Вибрация джойстика</button>
-					<div id='myLabPages'>
-						<a id='a1' href='https://www.google.com/'>Content Management System</a>
-						<br>
-						<br>
-						<a id='a1' href='https://www.google.com/'>Управляемый квадрат</a>
-						<br>
-						<br>
-						<a id='a1' href='chartjs-learn/my-chartjs-index.html'>Chart.js - Contributing</a>
-						<br>
-						<br>
-						<a id='a1' href='https://www.google.com/'>Aim / звезда / тренировка</a>
-						<br>
-						<br>
-						<a id='a1' href='Issue-6898/Issue-6898.html'>Issue#6898</a>
-						<br>
-						<div id='labPages'><button><</button><span class='mySpan'> 1 </span>из<span class='mySpan'> 3 </span><button>></button></div>
-					</div>
-				</div>
-=======
-=======
->>>>>>> 230a22f (slide-show 100% works)
 
 				<div id='slideShowContainer'>
 					<div id='slideMover'>
 						<div id='slidesWrapper'>
 							<div class='slideElement'>
 
-								<a id='a1' href='https://www.google.com/'>JavaScript / файл / список функций</a>
+								<a id='a1' href='JS-analyser/JS-analyser.html'>JS-analyser</a>
 								<br>
 								<br>
-								<a id='a1' href='https://www.google.com/'>Управляемый квадрат</a> 
+								<a id='a1' href='http://localhost/lab/Issue-6898/Issue-6898.html'>Issue#6898</a> 
 								<br>
 								<br>
 								<a id='a1' href='chartjs-learn/my-chartjs-index.html'>Gold / price / chart</a>
@@ -355,9 +317,12 @@
 							</div>
 							<div class='slideElement'>
 								<a id='a1' href='https://www.google.com/'>Content Management System</a>
+								<br>
+								<br>
+								<a id='a1' href='https://www.google.com/'>Управляемый квадрат</a>
 							</div>
 							<div class='slideElement'>
-								<a id='a1' href='https://www.google.com/'>Test#1</a>
+								<a id='a1' href='https://www.google.com/'>Тест#1</a>
 							</div> 
 						</div>
 					</div>
@@ -371,122 +336,12 @@
 				</div>
 					
 				</div>
->>>>>>> 230a22f (slide-show 100% works)
 				<div class='col' class='c1'>
-					<!--*******************************************************************************************-->
-<!--******************METHOD SEARCH TOOL*************************************************-->
-<!--*******************************************************************************************-->
-			
-			<style>
-				#MethodSearchTool {width: 320px;}
-				/**.myField {
-					clear: both;
-					text-align: right;
-					width: 200px;
-				}
-				label {float:left;}*/
-				output {
-					width: 50px;
-					background-color: red;
-				}
-				form div {
-					text-align: center;
-				}
-				div#divRequest {
-					margin-top: -4px;
-					margin-bottom: 5px;
-				}
-				div#divResult {
-					margin: 5px;
-				}
-				fieldset legend {
-					text-align: center;
-				} 	
-				input#btn-go {
-					width: 75px;
-					margin-top: 5px;
-					height: 50px;
-					display:block;
-					margin:0 auto;
-					margin-top: 5px;
-					box-shadow: 1px 1px;
-				}	
-				output.my-output1 {
-					width: 221px;
-					height: 25px;
-					background-color: Lime;
-				}	
-				*.myField {
-					width: 222px;
-					height: 27px;
-				}
-				#myFile1 {
-					color: grey;
-					font-style: italic;
-					width: 150px;
-					margin-right: 0;
-					background-color: white;
-					height: 25px;
-					margin-bottom: 1px;
-					margin-left: 1px;
-				}
-				input#MyBrowse {
-					width: 69px;
-					height: 27px;
-					margin-left: 2px;
-					margin-top: -1px;
-					position: absolute;
-				}
-				button#exit {
-					margin-top: 15px;
-					width: 50px;
-					height: 50px;
-					background-image: url( 'shutdown.png');
-					background-size: 48px;
-					background-repeat: no-repeat;
-				}
-			</style>
-
-			<script>
-
-			</script>
-
-			<div id='MethodSearchTool'>
-				<form>
-					<fieldset>
-						<legend>Method Search Tool</legend>
-						<div id='divRequest'>---request---</div>
-						<label class='myForm'>file</label>
-						<output id='myFile1' value='Upload The File'>Upload The File</output>
-						<input type='button' id='MyBrowse' value='Browse'>
-						<label class='myForm'>line#</label>
-						<input class='myField'>
-						<label class='myForm'>method</label>
-						<input class='myField'>
-						<input type='submit' value='GO' id='btn-go'>
-						<div id='divResult'>---result---</div>
-						<label class='myForm'>file</label>
-						<output class='my-output1'></output>
-						<label class='myForm'>line#</label>
-						<output class='my-output1' value='fuck'></output>
-						<label class='myForm'>method</label>
-						<output class='my-output1'></output>
-					</fieldset>
-				</form>
-				
-			</div>
-			
-			<!--<button id='exit'></button>-->
-
 			<br>
 
 	
-			<a href="phplogin/logout.php"><img style="width: 50px; height: 50px;" src="shutdown.png"></a>
-		
+			<a id='shutdown-a' href="phplogin/logout.php"><img style="width: 50px; height: 50px;" src="shutdown.png"></a>
 
-<!--*******************************************************************************************-->
-<!--*******************************************************************************************-->
-<!--*******************************************************************************************-->
 				</div>
 			</div>
 		</div>
