@@ -1,7 +1,7 @@
 var marksCanvas = document.getElementById("canvas1");
 
 var marksData = {
-  labels: ["English", "Maths", "Physics"],
+  labels: ["Math", "Art", "Sciense"],
   datasets: [{
     label: "Student A",
     backgroundColor: "rgba(200,0,0,0.2)",

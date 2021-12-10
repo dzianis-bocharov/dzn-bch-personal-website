@@ -6959,9 +6959,9 @@
       }
       const layers = me._layers;
       for (i = 0; i < layers.length && layers[i].z <= 0; ++i) {
-        layers[i].draw(me.chartArea);
+          layers[i].draw(me.chartArea); // закладка - рисует оси координат / заголовок / подписи данных
       }
-      me._drawDatasets();
+      me._drawDatasets(); // закладка - рисует данные
       for (; i < layers.length; ++i) {
         layers[i].draw(me.chartArea);
       }

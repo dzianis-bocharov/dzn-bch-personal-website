@@ -1,4 +1,20 @@
 <?php
+    // if(!empty($_SERVER['HTTP_CLIENT_IP'])){
+    //   $ip=$_SERVER['HTTP_CLIENT_IP'];
+    // }
+    // elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
+    //   $ip=$_SERVER['HTTP_X_FORWARDED_FOR'];
+    // }
+    // else{
+    //   $ip=$_SERVER['REMOTE_ADDR'];
+    // }
+	// if($ip = '::1') {
+	// 	$ip = '127.0.0.1';
+	// }
+	// echo  "".$ip."";
+?>
+
+<?php
 	// We need to use sessions, so you should always start sessions using the below code.
 	session_start();
 	// If the user is not logged in redirect to the login page...
@@ -277,7 +293,7 @@
 					<br>
 					<div id='profile'><div id='usernameMain'>DZIANIS</div>   /   <button id='btnProfile'>Profile</button></div>
 					<br>
-					<div id='ipClient'>IP - client / 127.0.0.1</div>
+					<div id='ipClient'>IP - client / <span id='ipClient'></span></div>
 					<br>
 					<div id='xyz1'>
 						<audio controls id='xyz2'> <source src='faint.mp3' type='audio/mp3'></audio>
