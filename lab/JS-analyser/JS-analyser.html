@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta content="width=device-width, initial-scale=1" name="viewport">
+        <meta charset='utf-8'>
+        <link rel='stylesheet' href='reset.css'>
+        <link rel='stylesheet' href='style.css'>
+        <link rel='shortcut icon' type='image/ico' href='favicon-lab.ico'>
+        <script type='text/javascript' src='jquery.js'></script>
+    </head>
+    <body>
+        <div id='mainContainer'>
+            <h1>JS-analyser</h1>
+            <br>
+            <div id='controls'>
+                <div id='ctrlWhiteFrame'>
+                    Анализ 1-го js файла / скрипт не выполнять
+                    <br>
+                    <label class='switch'>
+                        <input id='test1' type='checkbox'>
+                        <span id='slider'>
+                        <span id='circle'></span>
+                        </span>
+                    </label>
+                    <br>
+                    <label>Файл-инициатор</label>
+                    <br>
+                    <input type="file">
+                    <br>
+                    <label>Файл-библиотека</label>
+                    <br>
+                    <input type="file">
+                    <br>
+                    <label>Файл JavaScript / 1 шт.</label>
+                    <br>
+                    <input type="file">
+                    <br>
+                    <button id='launch'>Запуск</button> 
+                    <button id='reset'>Reset</button>
+                    <br>
+                </div>
+                <a id='a1' href='../MainPage.php'>Навигация /// Lab / Home</a>
+            </div>
+            <div id='result'>
+                Иерархия функций в скрипте
+                <div id='ierarchyScheme'>...</div>
+                Код выбранной функции
+                <div id='codeOfFunction'>...</div>
+                Заметка
+                <div id='note'>...</div>
+
+                сокращенный файл скрипта
+                <br>
+                (только выполненные фунции) 
+                <br>
+                <button id='btnDownload'>скачать</button>
+                <br>
+            </div>
+        </div>
+    <body>
+</html>
