@@ -10231,6 +10231,7 @@
         return;
       }
       const labelOpts = options.labels;
+      // const labelOpts = ["маленький хуй", "средний хуй", "большой хуй"]
       const labelFont = toFont(labelOpts.font);
       const fontSize = labelFont.size;
       const titleHeight = me._computeTitleHeight();
