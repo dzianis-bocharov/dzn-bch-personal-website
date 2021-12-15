@@ -1006,6 +1006,7 @@
       this.scales = {};
       this.showLine = true;
       this.describe(_descriptors);
+      this.radarlabelsAlignInside = false; // моя строка
     }
     set(scope, values) {
       return set(this, scope, values);
@@ -12361,6 +12362,10 @@
     return items;
   }
   function getTextAlignForAngle(angle) {//закладка - самая важная
+    console.log('Test#123'); // моя строка
+    let a = defaults.radarlabelsAlignInside;
+    console.log(a);
+    debugger; // моя строка
     if (angle === 0 || angle === 180) {
       return 'center';
     } else if (angle < 180) {
