@@ -10,10 +10,16 @@ var marksData = {
     label: "Student B",
     backgroundColor: "rgba(0,0,200,0.2)",
     data: [54, 65, 60]
-  }]
+  }],
 };
 
 var radarChart = new Chart(marksCanvas, {
   type: 'radar',
   data: marksData
 });
+
+var propertyNames = Object.getOwnPropertyNames(Object.getPrototypeOf(radarChart));
+
+console.log((propertyNames).join("\n"));
+
+// console.log(radarChart.getOwnPropertyNames().join("\n"));

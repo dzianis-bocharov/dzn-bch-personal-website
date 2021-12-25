@@ -1,18 +1,3 @@
-<?php
-    // if(!empty($_SERVER['HTTP_CLIENT_IP'])){
-    //   $ip=$_SERVER['HTTP_CLIENT_IP'];
-    // }
-    // elseif(!empty($_SERVER['HTTP_X_FORWARDED_FOR'])){
-    //   $ip=$_SERVER['HTTP_X_FORWARDED_FOR'];
-    // }
-    // else{
-    //   $ip=$_SERVER['REMOTE_ADDR'];
-    // }
-	// if($ip = '::1') {
-	// 	$ip = '127.0.0.1';
-	// }
-	// echo  "".$ip."";
-?>
 
 <?php
 	// We need to use sessions, so you should always start sessions using the below code.
@@ -275,6 +260,35 @@
 				margin-left: 25px;
 			}
 		</style>
+
+
+
+        <script>
+            $(document).ready(function(){
+
+                // $('#ipClient').bind('click', function () {
+
+
+
+
+                    $.ajax({
+                        type: "GET",
+                        url: "IP-client/IP-client.php",
+                        dataType: "html",
+                        success: function (data) {
+                            $('#ipClient').html(data);
+                        }
+                    });
+
+
+
+                // });
+
+            });
+        </script>
+
+
+
 	</head>
 	<body>
 		<div class='container'>

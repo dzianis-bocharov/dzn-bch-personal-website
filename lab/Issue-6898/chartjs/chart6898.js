@@ -12364,16 +12364,22 @@
   function getTextAlignForAngle(angle) {//закладка - самая важная
     // console.log('Test#123'); // моя строка
     
-    let a = defaults.radarlabelsAlignInside;
-    console.log(a);
-    
+    // let a = defaults.radarlabelsAlignInside;
+    // console.log(a);
+
     // debugger; // моя строка
     if (angle === 0 || angle === 180) {
       return 'center';
     } else if (angle < 180) {
-      return 'right';//должно быть left
+      if(defaults.radarlabelsAlignInside){//моя строка
+        return 'right';  // моя строка
+      }; // моя строка
+      return 'left';//должно быть left
     }
-    return 'left';//должно быть right
+    if(defaults.radarlabelsAlignInside){//моя строка
+      return 'left';  // моя строка
+    }; // моя строка
+    return 'right';//должно быть right
   }
   function leftForTextAlign(x, w, align) {
     if (align === 'right') {
