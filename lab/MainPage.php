@@ -276,7 +276,7 @@
                         url: "IP-client/IP-client.php",
                         dataType: "html",
                         success: function (data) {
-                            $('#ipClient').html(data);
+                            $('#ipClientSpan').html(data);
                         }
                     });
 
@@ -307,7 +307,7 @@
 					<br>
 					<div id='profile'><div id='usernameMain'>DZIANIS</div>   /   <button id='btnProfile'>Profile</button></div>
 					<br>
-					<div id='ipClient'>IP - client / <span id='ipClient'></span></div>
+					<div id='ipClient'>IP - client / <span id='ipClientSpan'></span></div>
 					<br>
 					<div id='xyz1'>
 						<audio controls id='xyz2'> <source src='faint.mp3' type='audio/mp3'></audio>
