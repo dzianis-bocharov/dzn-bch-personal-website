@@ -20,7 +20,6 @@ elseif (isset($_SERVER['HTTP_X_FORWARDED_FOR']) && $_SERVER['HTTP_X_FORWARDED_FO
   $Ip = $_SERVER['HTTP_X_FORWARDED_FOR'];
 elseif (isset($_SERVER['REMOTE_ADDR']) && $_SERVER['REMOTE_ADDR'] != '')
   $Ip = $_SERVER['REMOTE_ADDR'];
-echo'<br>';
 echo $Ip;
 
 ?>
