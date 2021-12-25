@@ -21,7 +21,7 @@ elseif (isset($_SERVER['HTTP_X_FORWARDED_FOR']) && $_SERVER['HTTP_X_FORWARDED_FO
 elseif (isset($_SERVER['REMOTE_ADDR']) && $_SERVER['REMOTE_ADDR'] != '')
   $Ip = $_SERVER['REMOTE_ADDR'];
 
-   if($Ip = '::1') {
+   if($Ip == '::1') {
      $Ip = '127.0.0.1';
    }
 
