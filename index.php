@@ -754,7 +754,7 @@
         </div>
         <footer id='binFooter'>
             <hr id='footerLine'>
-            <div id='divFooter'>© 2021 Dzianis Bocharov</div>
+            <div id='divFooter'>© 2022 Dzianis Bocharov</div>
         </footer>
     </body>
 </html>
