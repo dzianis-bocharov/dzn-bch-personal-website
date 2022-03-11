@@ -3,58 +3,65 @@
     <head>
         <meta content="width=device-width, initial-scale=1" name="viewport">
         <meta charset='utf-8'>
-        <link rel='stylesheet' href='reset.css'>
-        <link rel='stylesheet' href='style.css'>
+        <link rel='stylesheet' href='css/reset.css'>
+        <link rel='stylesheet' href='css/style.css'>
         <link rel='shortcut icon' type='image/ico' href='favicon-lab.ico'>
-        <script type='text/javascript' src='jquery.js'></script>
+        <script type='text/javascript' src='js/jquery.js'></script>
+        <script type='text/javascript' src='js/js-analyser.js'></script>
+        <script type='text/javascript' src='js/controls.js'></script>
     </head>
     <body>
         <div id='mainContainer'>
             <h1>JS-analyser</h1>
             <br>
-            <div id='controls'>
+            <div id='controls-buttons'>
+                <span class='sector-label'>Рычаги управления</span>
                 <div id='ctrlWhiteFrame'>
-                    Анализ 1-го js файла / скрипт не выполнять
+                    Скрипт /// on - выполнить / off - не выполнять
                     <br>
-                    <label class='switch'>
-                        <input id='test1' type='checkbox'>
+                    <label id='switch'>
+                        <input id='test1' type='checkbox' class='' checked>
                         <span id='slider'>
                         <span id='circle'></span>
                         </span>
                     </label>
                     <br>
-                    <label>Файл-инициатор</label>
+                    <div id='fileInputHTMLwrapper'>
+                        <label>Файл HTML / загрузить</label>
+                        <br>
+                        <div class='wrapper'>
+                            <input type='file' id='file1'>
+                            <div id=''>
+                            <input type='text' id='file-name1' class = 'fileNames' value='...' readonly='readonly'>
+                            <input type='button' value='Файл' id='file-btn1' class='input-file-btn'>
+                            </div> 
+                        </div>
+                        <br>
+                    </div>
+                    <label>Файл JavaScript / загрузить</label>
                     <br>
-                    <input type="file">
+                    <div class='wrapper'>
+                        <input type='file' id='file2'>
+                        <div id=''>
+                          <input type='text' id='file-name2' class = 'fileNames' value='...' readonly='readonly'>
+                          <input type='button' value='Файл' id='file-btn2' class='input-file-btn'>
+                        </div> 
+                    </div>
                     <br>
-                    <label>Файл-библиотека</label>
-                    <br>
-                    <input type="file">
-                    <br>
-                    <label>Файл JavaScript / 1 шт.</label>
-                    <br>
-                    <input type="file">
-                    <br>
-                    <button id='launch'>Запуск</button> 
-                    <button id='reset'>Reset</button>
-                    <br>
+                    <button id='launch' class='control-btn'>ЗАПУСК</button> 
+                    <button id='reset' class='control-btn'>Сброс</button>
                 </div>
                 <a id='a1' href='../MainPage.php'>Навигация /// Lab / Home</a>
             </div>
             <div id='result'>
-                Иерархия функций в скрипте
-                <div id='ierarchyScheme'>...</div>
-                Код выбранной функции
-                <div id='codeOfFunction'>...</div>
-                Заметка
-                <div id='note'>...</div>
-                сокращенный файл скрипта
-                <br>
-                (только выполненные фунции) 
-                <br>
-                <button id='btnDownload' disabled>скачать</button>
-                <br>
+                <span class='sector-label'>Иерархия функций в анализируемом скрипте</span>
+                <div id='ierarchyScheme' class='normalWidthIerarchyScheme'>
+                    <button class='wideDiv btn-scroll-no'  id='expandIerarchyScheme'>Развернуть на<br> ширину окна</button>
+                    <div class="canvas-bin">
+                        <canvas id='mainCanvas' class='smallSizeCanvas'></canvas>
+                    <div>
+                </div>
             </div>
         </div>
-    <body>
+     <body>
 </html>

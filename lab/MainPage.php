@@ -1,8 +1,7 @@
-
 <?php
-	// We need to use sessions, so you should always start sessions using the below code.
+	// We need to use sessions, so you should always start sessions using the below.
 	session_start();
-	// If the user is not logged in redirect to the login page...
+	// If the user is not logged in redirect to the login page... 
 	if (!isset($_SESSION['loggedin'])) {
 		header('Location: phplogin/index.html');
 		exit;
@@ -15,78 +14,20 @@
 		
 	    <meta charset="utf-8">
 		<meta content="width=device-width, initial-scale=1" name="viewport">
+
 		<title>lab</title>
 		
 		<!--Bootstrap / подключение-->
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+		<link rel='stylesheet' href='css/slide-show.css'>
+		<link rel='stylesheet' href='css/style.css'>
+
 		<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 		<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
 		<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+		<script src='js/gamepad-vibration.js'></script>
 
-		<style>
-			body {
-				background-color: grey;
-				line-height: normal;
-				font-family: TimesNewRoman;
-			}
-			h1 {
-				color: white;
-				font-weight: bold;
-			}
-			button.lab1 {
-				font-size: 16px;
-			    width: 300px;
-			    height: 55px;
-				margin: 5px;
-			}
-	        body {font-size: 18px}
-	        div#duck1 {
-	            color: white;
-	            height: 35px;
-	            width: 200px;
-	            border: solid 2px white;
-	        }
-			#can1 {
-				width: 960px;
-			}
-			@media only screen and (max-width: 1000px) {
-                 h1 {
-                     font-size: 100px;
-                 }
-                 button.lab1 {
-                     font-size: 45px;
-                     width: 700px;
-                     height: 140px;
-                 }
-                 body {
-                     font-size: 50px;
-                 }
-                 div#duck123 {
-                     height: 70px;
-                     width: 400px;
-                     padding: 10px;
-                 }
-             }
-			img#dick {
-				width:400px;
-				float: left;
-			}
-			/*#xyz1 {
-				width: 500px;
-			}*/
-			#xyz2 {
-				margin-top: -5px;
-			};
-			/*a:link {
-  				color: green;
-			}
-			a:visited {
-  				color: blue;
-			}
-			a:hover {
-  				color: blue;
-			}*/
-		</style>
+
 		<!--стили для тогла как для айфона-->
 		<style>
 			.switch {
@@ -145,8 +86,6 @@
 				padding: 5px 3px 5px 7px;
 			}
  		</style>
-
-		<link rel='stylesheet' href='css/slide-show.css'>
 
 		<script type="text/javascript" src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
 		<link rel='shortcut icon' type='image/ico' href='favicon-lab.ico'>
@@ -266,10 +205,6 @@
         <script>
             $(document).ready(function(){
 
-                // $('#ipClient').bind('click', function () {
-
-
-
 
                     $.ajax({
                         type: "GET",
@@ -281,12 +216,8 @@
                     });
 
 
-
-                // });
-
             });
         </script>
-
 
 
 	</head>
@@ -373,12 +304,11 @@
 				<div class='col' class='c1'>
 
 
-
-			<button id='z' class="lab1">PHP&MySQL / форум</button>
+				<button id='z' class="lab1">PHP&MySQL / форум</button>
 					<br>
 					<button class="lab1">Canvas / рисование</button>
 					<br>
-					<button class="lab1">Вибрация джойстика</button>
+					<button class="lab1" id='btnGamepadVibration'>Вибрация джойстика</button>
 
 			<br>
 
@@ -388,6 +318,8 @@
 				</div>
 			</div>
 		</div>
+		<div id="mylog" style='display:none;'></div>
+
 	</body>
 
 </html>
