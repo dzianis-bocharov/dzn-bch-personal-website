@@ -209,6 +209,11 @@
 
         <script>
             $(document).ready(function(){
+<<<<<<< HEAD
+=======
+
+
+>>>>>>> e1df849 (js-analyser / show list of classes)
                     $.ajax({
                         type: "GET",
                         url: "IP-client/IP-client.php",
@@ -217,9 +222,18 @@
                             $('#ipClientSpan').html(data);
                         }
                     });
+<<<<<<< HEAD
             });
         </script>
 
+=======
+
+
+            });
+        </script>
+
+
+>>>>>>> e1df849 (js-analyser / show list of classes)
 	</head>
 	<body>
 		<div class='container'>

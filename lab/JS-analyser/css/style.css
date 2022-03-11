@@ -1,20 +1,30 @@
+<<<<<<< HEAD
 * {
   box-sizing: border-box;
 }
+=======
+>>>>>>> e1df849 (js-analyser / show list of classes)
 body {
     background-color: grey;
     color: white;    
     position: relative;
 }
 div#mainContainer {
+<<<<<<< HEAD
     width: 1450px;
     height: auto;
     /* border: 2px solid black; *//*УДАЛИТЬ!!!*/
+=======
+    width: 1140px;
+>>>>>>> e1df849 (js-analyser / show list of classes)
     margin-left: auto;
     margin-right: auto;
     padding-top: 20px;
     font-size: 16px;
+<<<<<<< HEAD
     overflow: hidden;
+=======
+>>>>>>> e1df849 (js-analyser / show list of classes)
 }
 h1 {
     font-size: 50px;
@@ -23,19 +33,31 @@ div#controls-buttons {
   float: left;
   margin-right: 10px;
 }
+<<<<<<< HEAD
 div#ctrlWhiteFrame1 {
   padding: 10px 5px 5px 5px;
   width: 326px;
   height: 555px;
   border: 2px white solid;
+=======
+div#ctrlWhiteFrame {
+  padding: 5px;
+  width: 320px;
+  height: 525px;
+  border: 2px white solid;
+  padding: 5px;
+>>>>>>> e1df849 (js-analyser / show list of classes)
   margin-right: 10px;
   margin-bottom: 5px;
   position: relative;
 }
+<<<<<<< HEAD
 .white-line-1 {
 	border-color: blue;
 	height: 0.5px;
 }
+=======
+>>>>>>> e1df849 (js-analyser / show list of classes)
 .wrapper {
   height: 35px;
   width: 310px;
@@ -51,6 +73,7 @@ div#ctrlWhiteFrame1 {
   position: relative;
   box-sizing: border-box;
   overflow: hidden;
+<<<<<<< HEAD
   width: 256px;
   height: 26px;
   font-size: 14px;
@@ -61,6 +84,25 @@ div#ctrlWhiteFrame1 {
   height: 26px; 
   border: none;
   margin-left: -2px;
+=======
+  width: 260px;
+  height: 26px;
+  font-size: 14px;
+}
+#file-name3 {
+  position: relative;
+  box-sizing: border-box;
+  overflow: hidden;
+  width: 260px;
+  height: 27px;
+  font-size: 14px;
+}
+#file-btn1, #file-btn2, #file-btn3 {
+  width: 50px;
+  height: 25px; 
+  border: none;
+  margin-left: -4px;
+>>>>>>> e1df849 (js-analyser / show list of classes)
   margin-top: -1px;
   font-size: 14px;
 }
@@ -69,6 +111,7 @@ div#jsFilesUpload {
   margin-top: 10px;
   border: 2px white solid;
 }
+<<<<<<< HEAD
 div.div-element-scheme {
   padding: 5px;
 }
@@ -123,6 +166,12 @@ code, .file-code-inside {
   text-indent: -45px;
   padding-left: 50px;
 } */
+=======
+div#result {
+  width: 600px;
+  float: left;
+}
+>>>>>>> e1df849 (js-analyser / show list of classes)
 #switch {
   position: relative;
   display: inline-block;
@@ -173,11 +222,18 @@ input:checked + span #circle {
 body {
   background: grey;
 }
+<<<<<<< HEAD
 input#launch {
     width: 145px;
     height: 55px;
     font-size: 25px;
     border: none;
+=======
+button#launch {
+    width: 145px;
+    height: 55px;
+    font-size: 25px;
+>>>>>>> e1df849 (js-analyser / show list of classes)
     background-color: violet;
 }
 button#reset {
@@ -186,6 +242,7 @@ button#reset {
 }
 input[type=file] {
     height: 50px;
+<<<<<<< HEAD
 } 
 .tabs-ierarchy {
   user-select: none;
@@ -222,11 +279,26 @@ div#ierarchyScheme {
 }
 .largeWidthIerarchyScheme {
   padding: 10px 5px 50px 5px;
+=======
+}
+div#ierarchyScheme {
+  background-color: lime;
+  color: black;
+  /* overflow: auto; */
+}
+.normalWidthIerarchyScheme {
+  height: 539px;
+  width: 780px;
+  position: relative;
+}
+.largeWidthIerarchyScheme {
+>>>>>>> e1df849 (js-analyser / show list of classes)
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+<<<<<<< HEAD
   background-color: grey;
 
 }
@@ -253,13 +325,32 @@ div#ierarchyScheme {
 }
 .btn-scroll-yes {
   right: 5px;
+=======
+
+}
+.wideDiv {
+  position: absolute;
+  top: 2px;
+  height: 40px;
+  width: 120px;
+}
+.btn-scroll-yes {
+  right: 20px;
+>>>>>>> e1df849 (js-analyser / show list of classes)
 }
 .btn-scroll-no {
   right: 5px;
 }
+<<<<<<< HEAD
 .white-line-2 {
   height: 2px;
   border-color: blue;
+=======
+.canvas-bin {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+>>>>>>> e1df849 (js-analyser / show list of classes)
 }
 button.result-btn{
   width: 180px;
@@ -271,6 +362,17 @@ button.result-btn{
 div#selectedFunctionRadio {
   margin-bottom: 5px;
 }
+<<<<<<< HEAD
+=======
+div#codeOfFunction {
+  background-color: lime;
+  height: 110px;
+  width: 780px;
+  color: black;
+  margin-bottom: 5px;
+  position: relative;
+}
+>>>>>>> e1df849 (js-analyser / show list of classes)
 div#note {
   background-color: white;
   height: 55px;
@@ -292,6 +394,7 @@ span.sector-label {
   display: inline-block;
 }
 canvas.smallSizeCanvas {
+<<<<<<< HEAD
   top: 0px;
   left: 0px;
   width: 100%;
@@ -404,3 +507,15 @@ div.div-result{
 }
 
 /* canvas{ border: 1px solid black; } */
+=======
+  /* border: 2px black solid; */
+  /* position: absolute; */
+  top: 0px;
+  left: 0px;
+  /* height: 3539px; */
+  width: 680px;
+  box-sizing: border-box;
+}
+/* canvas.largeSizeCanvas {
+} */
+>>>>>>> e1df849 (js-analyser / show list of classes)
