@@ -51,12 +51,12 @@ $(document).ready(function(){
     })
 
     $('#expandIerarchyScheme').on('click', ()=>{
-        if($('#ierarchyScheme').hasClass('normalWidthIerarchyScheme')) {
-            $('#ierarchyScheme').removeClass('normalWidthIerarchyScheme').addClass('largeWidthIerarchyScheme');
+        if($('#result').hasClass('normalWidthIerarchyScheme')) {
+            $('#result').removeClass('normalWidthIerarchyScheme').addClass('largeWidthIerarchyScheme');
             $('#expandIerarchyScheme').html('Свернуть');
         }
         else {
-            $('#ierarchyScheme').removeClass('largeWidthIerarchyScheme').addClass('normalWidthIerarchyScheme');
+            $('#result').removeClass('largeWidthIerarchyScheme').addClass('normalWidthIerarchyScheme');
             $('#expandIerarchyScheme').html('Развернуть на<br> ширину окна');
         };
     })

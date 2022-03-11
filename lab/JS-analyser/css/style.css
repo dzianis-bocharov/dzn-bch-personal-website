@@ -73,14 +73,9 @@ div#jsFilesUpload {
   margin-top: 10px;
   border: 2px white solid;
 }
-div#result {
-  padding: 10px 5px 50px 5px;
-  width: 780px;
-  height: 555px;
-  float: left;
-  border: white solid 2px;
-  position: relative;
-}
+/* div#result {
+
+} */
 #switch {
   position: relative;
   display: inline-block;
@@ -147,19 +142,28 @@ input[type=file] {
 div#ierarchyScheme {
   background-color: lime;
   color: black;
+  width: 100%;
+  height: 100%;
   /* overflow: auto; */
 }
 .normalWidthIerarchyScheme {
-  height: 100%;
-  width: 100%;
+  padding: 10px 5px 50px 5px;
+  width: 780px;
+  height: 555px;
+  float: left;
+  border: white solid 2px;
+  background-color: grey;
   position: relative;
+
 }
 .largeWidthIerarchyScheme {
+  padding: 10px 5px 50px 5px;
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
+  background-color: grey;
 
 }
 .wideDiv {
