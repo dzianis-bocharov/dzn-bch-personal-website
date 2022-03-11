@@ -45,7 +45,13 @@ $(document).ready(function(){
 
         function _slideMove(value) {
             itemInfo.update(value);
-            slideMover.style.transform = `translateX(${itemInfo.offset * 100}%)`;
+
+             var z = `${Math.round(itemInfo.offset) * 350-2}px`
+
+             $("#slideMover").stop().animate({
+                  left: z
+               }, 700);
+
             _disableControls();
             _updatePageIndicator();
         };

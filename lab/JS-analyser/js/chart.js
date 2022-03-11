@@ -1006,7 +1006,6 @@
       this.scales = {};
       this.showLine = true;
       this.describe(_descriptors);
-      this.radarlabelsAlignInside = false; // моя строка
     }
     set(scope, values) {
       return set(this, scope, values);
@@ -6960,9 +6959,9 @@
       }
       const layers = me._layers;
       for (i = 0; i < layers.length && layers[i].z <= 0; ++i) {
-          layers[i].draw(me.chartArea); // закладка - рисует оси координат / заголовок / подписи данных
+        layers[i].draw(me.chartArea);
       }
-      me._drawDatasets(); // закладка - рисует данные
+      me._drawDatasets();
       for (; i < layers.length; ++i) {
         layers[i].draw(me.chartArea);
       }
@@ -8642,7 +8641,7 @@
     }
   }
   RadarController.id = 'radar';
-  RadarController.defaults = {//закладка
+  RadarController.defaults = {
     datasetElementType: 'line',
     dataElementType: 'point',
     indexAxis: 'r',
@@ -10232,7 +10231,6 @@
         return;
       }
       const labelOpts = options.labels;
-      // const labelOpts = ["маленький хуй", "средний хуй", "большой хуй"]
       const labelFont = toFont(labelOpts.font);
       const fontSize = labelFont.size;
       const titleHeight = me._computeTitleHeight();
@@ -12362,24 +12360,12 @@
     return items;
   }
   function getTextAlignForAngle(angle) {//закладка - самая важная
-    // console.log('Test#123'); // моя строка
-    
-    // let a = defaults.radarlabelsAlignInside;
-    // console.log(a);
-
-    // debugger; // моя строка
     if (angle === 0 || angle === 180) {
       return 'center';
     } else if (angle < 180) {
-      if(defaults.radarlabelsAlignInside){//моя строка
-        return 'right';  // моя строка
-      }; // моя строка
-      return 'left';//должно быть left
+      return 'right';//должно быть left
     }
-    if(defaults.radarlabelsAlignInside){//моя строка
-      return 'left';  // моя строка
-    }; // моя строка
-    return 'right';//должно быть right
+    return 'left';//должно быть right
   }
   function leftForTextAlign(x, w, align) {
     if (align === 'right') {
