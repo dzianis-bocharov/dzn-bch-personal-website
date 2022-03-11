@@ -8,11 +8,15 @@ h1 {
     font-weight: bold;
 }
 <<<<<<< HEAD
+<<<<<<< HEAD
 button, div, img {
     border-style: none;
     /* border-radius: 5px; */
 }
 button.lab1  {
+=======
+button.lab1 {
+>>>>>>> e1df849 (js-analyser / show list of classes)
 =======
 button.lab1 {
 >>>>>>> e1df849 (js-analyser / show list of classes)

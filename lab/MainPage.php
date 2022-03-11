@@ -210,7 +210,10 @@
         <script>
             $(document).ready(function(){
 <<<<<<< HEAD
+<<<<<<< HEAD
 =======
+=======
+>>>>>>> e1df849 (js-analyser / show list of classes)
 
 
 >>>>>>> e1df849 (js-analyser / show list of classes)
@@ -228,11 +231,17 @@
 
 =======
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> e1df849 (js-analyser / show list of classes)
             });
         </script>
 
 
+<<<<<<< HEAD
+>>>>>>> e1df849 (js-analyser / show list of classes)
+=======
 >>>>>>> e1df849 (js-analyser / show list of classes)
 	</head>
 	<body>
