@@ -15,8 +15,9 @@
             <h1>JS-analyser</h1>
             <br>
             <div id='controls-buttons'>
-                <span class='sector-label'>Рычаги управления</span>
-                <div id='ctrlWhiteFrame'>
+                <div id='ctrlWhiteFrame1'>
+                    <span class='sector-label'>Рычаги управления</span>
+                    <hr class="white-line-1">
                     Скрипт /// on - выполнить / off - не выполнять
                     <br>
                     <label id='switch'>
@@ -55,11 +56,12 @@
             </div>
             <div id='result'>
                 <span class='sector-label'>Иерархия функций в анализируемом скрипте</span>
+                <button class='wideDiv btn-scroll-no'  id='expandIerarchyScheme'>Развернуть на<br> ширину окна</button>
+                <hr class="white-line-2">
                 <div id='ierarchyScheme' class='normalWidthIerarchyScheme'>
-                    <button class='wideDiv btn-scroll-no'  id='expandIerarchyScheme'>Развернуть на<br> ширину окна</button>
                     <div class="canvas-bin">
                         <canvas id='mainCanvas' class='smallSizeCanvas'></canvas>
-                    <div>
+                    </div>
                 </div>
             </div>
         </div>

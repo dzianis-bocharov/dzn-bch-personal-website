@@ -1,3 +1,6 @@
+* {
+  box-sizing: border-box;
+}
 body {
     background-color: grey;
     color: white;    
@@ -17,15 +20,18 @@ div#controls-buttons {
   float: left;
   margin-right: 10px;
 }
-div#ctrlWhiteFrame {
-  padding: 5px;
+div#ctrlWhiteFrame1 {
+  padding: 10px 5px 5px 5px;
   width: 320px;
-  height: 525px;
+  height: 555px;
   border: 2px white solid;
-  padding: 5px;
   margin-right: 10px;
   margin-bottom: 5px;
   position: relative;
+}
+.white-line-1 {
+	border-color: blue;
+	height: 0.5px;
 }
 .wrapper {
   height: 35px;
@@ -42,7 +48,7 @@ div#ctrlWhiteFrame {
   position: relative;
   box-sizing: border-box;
   overflow: hidden;
-  width: 260px;
+  width: 256px;
   height: 26px;
   font-size: 14px;
 }
@@ -68,8 +74,12 @@ div#jsFilesUpload {
   border: 2px white solid;
 }
 div#result {
-  width: 600px;
+  padding: 10px 5px 50px 5px;
+  width: 780px;
+  height: 555px;
   float: left;
+  border: white solid 2px;
+  position: relative;
 }
 #switch {
   position: relative;
@@ -140,8 +150,8 @@ div#ierarchyScheme {
   /* overflow: auto; */
 }
 .normalWidthIerarchyScheme {
-  height: 539px;
-  width: 780px;
+  height: 100%;
+  width: 100%;
   position: relative;
 }
 .largeWidthIerarchyScheme {
@@ -155,14 +165,18 @@ div#ierarchyScheme {
 .wideDiv {
   position: absolute;
   top: 2px;
-  height: 40px;
+  height: 35px;
   width: 120px;
 }
 .btn-scroll-yes {
-  right: 20px;
+  right: 5px;
 }
 .btn-scroll-no {
   right: 5px;
+}
+.white-line-2 {
+  height: 2px;
+  border-color: blue;
 }
 .canvas-bin {
   width: 100%;
@@ -179,14 +193,14 @@ button.result-btn{
 div#selectedFunctionRadio {
   margin-bottom: 5px;
 }
-div#codeOfFunction {
+/* div#codeOfFunction {
   background-color: lime;
   height: 110px;
   width: 780px;
   color: black;
   margin-bottom: 5px;
   position: relative;
-}
+} */
 div#note {
   background-color: white;
   height: 55px;
