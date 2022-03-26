@@ -2,7 +2,7 @@
 
     $all_lines = [];
     $number_of_line = 0;
-    $file = fopen("../js/chart.js", "r"); 
+    $file = fopen("../js/chart-test1.js", "r"); 
     while(!feof($file)) {
         $number_of_line++;
         $line = fgets($file);

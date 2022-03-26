@@ -8,6 +8,10 @@
 	}
 ?>
 
+<?php
+	// include 'JS-analyser/php/jsFileToArray.php';
+?>
+
 <!DOCTYPE html>
 <html>
 	<head>
@@ -200,8 +204,6 @@
 			}
 		</style>
 
-
-
         <script>
             $(document).ready(function(){
 
@@ -218,7 +220,6 @@
 
             });
         </script>
-
 
 	</head>
 	<body>
@@ -255,7 +256,6 @@
 								<span id='circle'></span>
 							</span>
 						</label>
-						
 				</div>
 				</div>
 				</div>
