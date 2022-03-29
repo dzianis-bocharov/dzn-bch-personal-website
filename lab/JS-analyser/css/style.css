@@ -22,7 +22,7 @@ div#controls-buttons {
 }
 div#ctrlWhiteFrame1 {
   padding: 10px 5px 5px 5px;
-  width: 320px;
+  width: 326px;
   height: 555px;
   border: 2px white solid;
   margin-right: 10px;
@@ -144,7 +144,7 @@ input[type=file] {
   text-align: center;
   line-height: 20px;
   display: inline-block;
-  width: 200px; 
+  width: 150px; 
   height: 22px;
   margin: 0px;
 }
@@ -183,11 +183,18 @@ div#ierarchyScheme {
   background-color: grey;
 
 }
+.copyText{
+  background-color: LightSeaGreen; 
+  width: 85px; position: absolute; 
+  top: 2px; 
+  height: 35px; 
+  right: 145px;
+}
 .wideDiv {
   position: absolute;
   top: 2px;
   height: 35px;
-  width: 120px;
+  width: 130px;
 }
 .btn-scroll-yes {
   right: 5px;
