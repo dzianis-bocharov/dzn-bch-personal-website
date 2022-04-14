@@ -60,16 +60,20 @@
                 <button class='wideDiv btn-scroll-no'  id='expandIerarchyScheme'>Развернуть на<br> ширину окна</button>
                 <hr class="white-line-2">
                 <div>
-                    <div class='tabs-ierarchy tab-ierarchyScheme-active'>Cхема для файла</div>
-                    <div class='tabs-ierarchy tab-ierarchyScheme-normal'>Код файла</div>
-                    <div class='tabs-ierarchy tab-ierarchyScheme-normal'>Cхема для элемента</div>
-                    <div class='tabs-ierarchy tab-ierarchyScheme-normal'>Код элемента</div>
-                    <div class='tabs-ierarchy tab-ierarchyScheme-normal'>Cтек вызова</div>
+                    <div id='tab-fileScheme' class='tabs-ierarchy tab-ierarchyScheme-active'>Cхема для файла</div>
+                    <div id='tab-fileCode' class='tabs-ierarchy tab-ierarchyScheme-normal'>Код файла</div>
+                    <div id='tab-elementScheme' class='tabs-ierarchy tab-ierarchyScheme-normal'>Cхема для элемента</div>
+                    <div id='tab-elementCode' class='tabs-ierarchy tab-ierarchyScheme-normal'>Код элемента</div>
+                    <div id='tab-callStack' class='tabs-ierarchy tab-ierarchyScheme-normal'>Cтек вызова</div>
                 </div>
                 <div id='ierarchyScheme'>
                     <div class="canvas-bin">
                         <canvas id='mainCanvas' class='smallSizeCanvas'></canvas>
                     </div>
+                    <!-- <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div> -->
                 </div>
             </div>
         </div>
