@@ -60,5 +60,27 @@ $(document).ready(function(){
             $('#expandIerarchyScheme').html('Развернуть на<br> ширину окна');
         };
     })
-    
+
+    $('.tabs-ierarchy').on('click', (e) => {
+        let tabs = $('.tabs-ierarchy');
+        for(let i = tabs.length - 1; i>-1;i--){
+            if(tabs[i]==e.target){
+                if(!$(tabs[i]).hasClass('ttab-ierarchyScheme-active')){
+                        $(tabs[i]).addClass('tab-ierarchyScheme-active');
+                };
+                if($(tabs[i]).hasClass("tab-ierarchyScheme-normal")){
+                        $(tabs[i]).removeClass("tab-ierarchyScheme-normal");
+                }
+            }
+            else{
+                if(!$(tabs[i]).hasClass('tab-ierarchyScheme-notmal')){
+                        $(tabs[i]).addClass('tab-ierarchyScheme-normal');
+                };
+                if($(tabs[i]).hasClass("tab-ierarchyScheme-active")){
+                        $(tabs[i]).removeClass("tab-ierarchyScheme-active");
+                    }
+            }
+        };
+    });
+
 });
