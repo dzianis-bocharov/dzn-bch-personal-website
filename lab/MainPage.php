@@ -168,6 +168,7 @@
 			div#profile {
 				border: 2px solid white;
 				width: 215px;
+				height: 40px;
 				padding: 5px;
 				white-space: pre;
 			}
@@ -202,6 +203,7 @@
 			a#shutdown-a {
 				margin-left: 25px;
 			}
+			
 		</style>
 
         <script>
@@ -216,6 +218,9 @@
                             $('#ipClientSpan').html(data);
                         }
                     });
+
+
+
 
 
             });
@@ -266,28 +271,28 @@
 						<div id='slidesWrapper'>
 							<div class='slideElement'>
 
-								<a id='a1' href='JS-analyser/JS-analyser.html'>JS-analyser</a>
+								<a tabindex='-1' id='a1' href='JS-analyser/JS-analyser.html'>JS-analyser</a>
 								<br>
 								<br>
-								<a id='a1' href='http://localhost/lab/Issue-6898/Issue-6898.html'>Issue#6898</a> 
+								<a tabindex='-1' id='a1' href='http://localhost/lab/Issue-6898/Issue-6898.html'>Issue#6898</a> 
 								<br>
 								<br>
-								<a id='a1' href='chartjs-learn/my-chartjs-index.html'>Gold / price / chart</a>
+								<a tabindex='-1' id='a1' href='chartjs-learn/my-chartjs-index.html'>Gold / price / chart</a>
 								<br>
 								<br>
-								<a id='a1' href='aim-star/aim-star-index.html'>Aim / тренировка</a>
+								<a tabindex='-1' id='a1' href='aim-star/aim-star-index.html'>Aim / тренировка</a>
 								<br>
 								<br>
-								<a id='a1' href='php-file-size/php-file-size.php'>PHP / размер файла</a>								
+								<a tabindex='-1' id='a1' href='php-file-size/php-file-size.php'>PHP / размер файла</a>								
 							</div>
 							<div class='slideElement'>
-								<a id='a1' href='https://www.google.com/'>Content Management System</a>
+								<a tabindex='-1' id='a1' href='https://www.google.com/'>Content Management System</a>
 								<br>
 								<br>
-								<a id='a1' href='https://www.google.com/'>Управляемый квадрат</a>
+								<a tabindex='-1' id='a1' href='https://www.google.com/'>Управляемый квадрат</a>
 							</div>
 							<div class='slideElement'>
-								<a id='a1' href='https://www.google.com/'>Тест#1</a>
+								<a tabindex='-1' id='a1' href='https://www.google.com/'>Тест#1</a>
 							</div> 
 						</div>
 					</div>

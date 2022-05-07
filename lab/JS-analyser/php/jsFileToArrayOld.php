@@ -21,5 +21,4 @@
     $js_array = json_encode($all_lines);
     echo "const javascript_array = ". $js_array . ";\n";
 
-
 ?>
