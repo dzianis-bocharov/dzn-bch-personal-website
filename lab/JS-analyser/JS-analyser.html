@@ -16,41 +16,43 @@
             <br>
             <div id='controls-buttons'>
                 <div id='ctrlWhiteFrame1'>
-                    <span class='sector-label'>Рычаги управления</span>
-                    <hr class="white-line-1">
-                    Скрипт /// on - выполнить / off - не выполнять
-                    <br>
-                    <label id='switch'>
-                        <input id='test1' type='checkbox' class='' checked>
-                        <span id='slider'>
-                        <span id='circle'></span>
-                        </span>
-                    </label>
-                    <br>
-                    <div id='fileInputHTMLwrapper'>
-                        <label>Файл HTML / загрузить</label>
+                    <form>
+                        <span class='sector-label'>Рычаги управления</span>
+                        <hr class="white-line-1">
+                        Скрипт /// on - выполнить / off - не выполнять
+                        <br>
+                        <label id='switch'>
+                            <input id='test1' type='checkbox' class='' checked>
+                            <span id='slider'>
+                            <span id='circle'></span>
+                            </span>
+                        </label>
+                        <br>
+                        <div id='fileInputHTMLwrapper'>
+                            <label>Файл HTML / загрузить</label>
+                            <br>
+                            <div class='wrapper'>
+                                <input type='file' id='file1'>
+                                <div id=''>
+                                <input type='text' id='file-name1' class = 'fileNames' value='...' readonly='readonly'>
+                                <input type='button' value='Файл' id='file-btn1' class='input-file-btn'>
+                                </div> 
+                            </div>
+                            <br>
+                        </div>
+                        <label>Файл JavaScript / загрузить</label>
                         <br>
                         <div class='wrapper'>
-                            <input type='file' id='file1'>
+                            <input type='file' id='file2'>
                             <div id=''>
-                            <input type='text' id='file-name1' class = 'fileNames' value='...' readonly='readonly'>
-                            <input type='button' value='Файл' id='file-btn1' class='input-file-btn'>
+                            <input type='text' id='file-name2' class = 'fileNames' value='...' readonly='readonly'>
+                            <input type='button' value='Файл' id='file-btn2' class='input-file-btn'>
                             </div> 
                         </div>
                         <br>
-                    </div>
-                    <label>Файл JavaScript / загрузить</label>
-                    <br>
-                    <div class='wrapper'>
-                        <input type='file' id='file2'>
-                        <div id=''>
-                          <input type='text' id='file-name2' class = 'fileNames' value='...' readonly='readonly'>
-                          <input type='button' value='Файл' id='file-btn2' class='input-file-btn'>
-                        </div> 
-                    </div>
-                    <br>
-                    <button id='launch' class='control-btn'>ЗАПУСК</button> 
-                    <button id='reset' class='control-btn'>Сброс</button>
+                        <input type='submit' id='launch' class='control-btn' value="ЗАПУСК"> 
+                        <button id='reset' class='control-btn'>Сброс</button>
+                    </form>
                 </div>
                 <a id='a1' href='../MainPage.php'>Навигация /// Lab / Home</a>
             </div>
@@ -60,22 +62,25 @@
                 <button class='wideDiv btn-scroll-no'  id='expandIerarchyScheme'>Развернуть на<br> ширину окна</button>
                 <hr class="white-line-2">
                 <div>
-                    <div id='tab-fileScheme' class='tabs-ierarchy tab-ierarchyScheme-active'>Cхема для файла</div>
+                    <div id='tab-fileScheme' class='tabs-ierarchy tab-ierarchyScheme-active'>Схема для файла</div>
                     <div id='tab-fileCode' class='tabs-ierarchy tab-ierarchyScheme-normal'>Код файла</div>
-                    <div id='tab-elementScheme' class='tabs-ierarchy tab-ierarchyScheme-normal'>Cхема для элемента</div>
+                    <div id='tab-elementScheme' class='tabs-ierarchy tab-ierarchyScheme-normal'>Схема для элемента</div>
                     <div id='tab-elementCode' class='tabs-ierarchy tab-ierarchyScheme-normal'>Код элемента</div>
                     <div id='tab-callStack' class='tabs-ierarchy tab-ierarchyScheme-normal'>Cтек вызова</div>
                 </div>
                 <div id='ierarchyScheme'>
-                    <div class="canvas-bin">
+                    <div class="div-main-canvas div-result">
                         <canvas id='mainCanvas' class='smallSizeCanvas'></canvas>
                     </div>
-                    <!-- <div></div>
-                    <div></div>
-                    <div></div>
-                    <div></div> -->
+                    <div class="div-result div-result-hide">код файла</div>
+                    <div class="div-result div-result-hide">схема для элемента</div>
+                    <div class="div-result div-result-hide">код элемента</div>
+                    <div class="div-call-stack div-result div-result-hide">...</div>
                 </div>
             </div>
         </div>
+        <script>
+           
+        </script>
      <body>
 </html>

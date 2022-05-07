@@ -1,6 +1,7 @@
 * {
   box-sizing: border-box;
 }
+
 body {
     background-color: grey;
     color: white;    
@@ -76,6 +77,12 @@ div#jsFilesUpload {
 /* div#result {
 
 } */
+div.div-call-stack {
+  overflow-y: auto;
+  word-wrap: break-word;  
+  padding: 5px;
+  /* font-size: 16px; */
+}
 #switch {
   position: relative;
   display: inline-block;
@@ -126,10 +133,11 @@ input:checked + span #circle {
 body {
   background: grey;
 }
-button#launch {
+input#launch {
     width: 145px;
     height: 55px;
     font-size: 25px;
+    border: none;
     background-color: violet;
 }
 button#reset {
@@ -183,6 +191,14 @@ div#ierarchyScheme {
   background-color: grey;
 
 }
+.div-result-hide {
+  display: none;
+}
+.div-result {
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+}
 .copyText{
   background-color: LightSeaGreen; 
   width: 85px; position: absolute; 
@@ -206,11 +222,12 @@ div#ierarchyScheme {
   height: 2px;
   border-color: blue;
 }
-.canvas-bin {
-  width: 100%;
+/*удалить после окончания разработки*/
+/* .canvas-bin { */
+  /* width: 100%;
   height: 100%;
-  overflow: auto;
-}
+  overflow: auto; */
+/* } */
 button.result-btn{
   width: 180px;
   height: 40px;
@@ -260,3 +277,6 @@ canvas.smallSizeCanvas {
 }
 /* canvas.largeSizeCanvas {
 } */
+button {
+  border-style:none;
+}

@@ -24,6 +24,7 @@ $(document).ready(function(){
     });
 
     $('#reset').on('click', () => {
+        $('.div-call-stack').html('...');
         $('.fileNames').val('...');
         $("input[type='file']").val = null;
         const inputSwitchChecked = document.getElementById("test1").checked;
@@ -46,8 +47,15 @@ $(document).ready(function(){
         ctx.scale(z, z);
         $('.wideDiv').removeClass('btn-scroll-yes').addClass('btn-scroll-no');
         ctx.clearRect(0, 0, ctx.canvas.width,  ctx.canvas.height);      
+        // ctx.font = "24px serif";
+        // ctx.fillText("...", 5, 20);
+        $('.tabs-ierarchy')[0].click();
+
+        var ctx = setupCanvas(document.querySelector('#mainCanvas'));
         ctx.font = "24px serif";
-        ctx.fillText("...", 5, 20);
+        ctx.fillText("...", 5, 14);
+      
+
     })
 
     $('#expandIerarchyScheme').on('click', ()=>{
@@ -63,6 +71,7 @@ $(document).ready(function(){
 
     $('.tabs-ierarchy').on('click', (e) => {
         let tabs = $('.tabs-ierarchy');
+        let divsResult = $('.div-result');//
         for(let i = tabs.length - 1; i>-1;i--){
             if(tabs[i]==e.target){
                 if(!$(tabs[i]).hasClass('ttab-ierarchyScheme-active')){
@@ -71,6 +80,9 @@ $(document).ready(function(){
                 if($(tabs[i]).hasClass("tab-ierarchyScheme-normal")){
                         $(tabs[i]).removeClass("tab-ierarchyScheme-normal");
                 }
+                if($(divsResult[i]).hasClass('div-result-hide')){
+                    $(divsResult[i]).removeClass('div-result-hide');
+                };
             }
             else{
                 if(!$(tabs[i]).hasClass('tab-ierarchyScheme-notmal')){
@@ -79,8 +91,10 @@ $(document).ready(function(){
                 if($(tabs[i]).hasClass("tab-ierarchyScheme-active")){
                         $(tabs[i]).removeClass("tab-ierarchyScheme-active");
                     }
+                if(!$(divsResult[i]).hasClass('div-result-hide')){
+                    $(divsResult[i]).addClass('div-result-hide');
+                };
             }
         };
     });
-
 });

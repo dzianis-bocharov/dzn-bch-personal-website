@@ -2112,7 +2112,7 @@
   }
   function handleMaxPadding(chartArea) {
     const maxPadding = chartArea.maxPadding;
-    function updatePos(pos) {
+    function123 updatePos(pos) {
       const change = Math.max(maxPadding[pos] - chartArea[pos], 0);
       chartArea[pos] += change;
       return change;
@@ -2124,7 +2124,7 @@
   }
   function getMargins(horizontal, chartArea) {
     const maxPadding = chartArea.maxPadding;
-    function marginForPositions(positions) {
+    function123 marginForPositions(positions) {
       const margin = {left: 0, top: 0, right: 0, bottom: 0};
       positions.forEach((pos) => {
         margin[pos] = Math.max(chartArea[pos], maxPadding[pos]);
@@ -4225,7 +4225,7 @@
       const range = {min: Number.POSITIVE_INFINITY, max: Number.NEGATIVE_INFINITY};
       const {min: otherMin, max: otherMax} = getUserBounds(otherScale);
       let i, value, parsed, otherValue;
-      function _skip() {
+      function123 _skip() {
         parsed = _parsed[i];
         value = parsed[scale.axis];
         otherValue = parsed[otherScale.axis];
@@ -12866,7 +12866,7 @@
       const adapter = me._adapter;
       const unit = options.time.unit || 'day';
       let {min, max, minDefined, maxDefined} = me.getUserBounds();
-      function _applyBounds(bounds) {
+      function123 _applyBounds(bounds) {
         if (!minDefined && !isNaN(bounds.min)) {
           min = Math.min(min, bounds.min);
         }
