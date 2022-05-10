@@ -1,5 +1,11 @@
-$(document).ready(function(){
-   
+// привязка сценариев JavaScript к кнопкам
+
+import {canvas_blur_fix} from './canvas-blur-fix.js'; 
+import {call_stack_tab} from './call-stack-tab.js'; 
+import {error_window_open, error_window_close} from './error-window.js';
+
+function controls() {
+
     $('#switch').click(() => {
         const inputSwitchChecked = document.getElementById("test1").checked;
         if(inputSwitchChecked) {
@@ -23,25 +29,36 @@ $(document).ready(function(){
         });
     });
 
-    $('#reset').on('click', () => {
+    $('#reset').on('click', (event) => {
+        event.preventDefault();
+        document.getElementById('file1').value = '';
+        document.getElementById('file2').value = '';
         $('.div-call-stack').html('...');
         $('.fileNames').val('...');
-        $("input[type='file']").val = null;
+        // $("input[type='file']").val = null; // удалить эту строку в конце разработки
+        $('#error_message').html('');
         const inputSwitchChecked = document.getElementById("test1").checked;
         if(!inputSwitchChecked) {
             $('#switch').trigger('click');
             $('#fileInputHTMLwrapper').removeClass('notVisibleFileInputHTML');
         };
-        function setupCanvas(canvas) {
-            var dpr = window.devicePixelRatio || 1;
-            var rect = canvas.getBoundingClientRect();
-            canvas.width = rect.width * dpr;
-            canvas.height = rect.height * dpr;
-            var ctx = canvas.getContext('2d');
-            ctx.scale(dpr, dpr);
-            return ctx;
-          }
-        var ctx = setupCanvas(document.querySelector('#mainCanvas'));
+
+//----------!!!ПОВТОРЯЮЩИЙСЯ КОД - ИМПОРТИРОВАТЬ МОДУЛЬ ------------------------------------------------------------
+
+        // удалить этот код в конце разработки
+        // function setupCanvas(canvas) {
+        //     var dpr = window.devicePixelRatio || 1;
+        //     var rect = canvas.getBoundingClientRect();
+        //     canvas.width = rect.width * dpr;
+        //     canvas.height = rect.height * dpr;
+        //     var ctx = canvas.getContext('2d');
+        //     ctx.scale(dpr, dpr);
+        //     return ctx;
+        //   }
+
+//------------------------------------------------------------------------------------------------------------------
+
+        var ctx = canvas_blur_fix(document.querySelector('#mainCanvas'));
         ctx.canvas.height = 100;
         const z = window.devicePixelRatio;
         ctx.scale(z, z);
@@ -51,7 +68,7 @@ $(document).ready(function(){
         // ctx.fillText("...", 5, 20);
         $('.tabs-ierarchy')[0].click();
 
-        var ctx = setupCanvas(document.querySelector('#mainCanvas'));
+        var ctx = canvas_blur_fix(document.querySelector('#mainCanvas'));
         ctx.font = "24px serif";
         ctx.fillText("...", 5, 14);
       
@@ -97,4 +114,72 @@ $(document).ready(function(){
             }
         };
     });
-});
+
+//-----------------------------------------------------------------------------------------------------------------------
+    
+  var ctx = canvas_blur_fix(document.querySelector('#mainCanvas'));
+
+  ctx.font = "24px serif";
+
+  ctx.fillText("...", 5, 14);
+
+    $('#launch').on('click', (event)=>{
+
+        event.preventDefault();
+
+        $('.tabs-ierarchy')[0].click();
+
+        if(!$('#file2')[0].files[0]){
+
+//---------- Window Error / открытие при наличии ошибки и остановка кода ------------------------------------------------
+            
+            error_window_open('Не выбран файл JavaScript!');
+
+//-----------------------------------------------------------------------------------------------------------------------
+            
+        }
+        else {
+
+//----------схема для файла----------------------------------------------------------------------------------------------
+
+            ctx.clearRect(0, 0, ctx.canvas.width,  ctx.canvas.height);
+
+            $.ajax({
+                type: "GET",
+                url: "php/jsFileToArrayOld.php",
+                dataType: "script",
+                success: function (data) {
+                    ctx.font = "18px serif";
+                    const list_of_functions = javascript_array;
+                    let x = 3;
+                    let w = 0;
+                    ctx.canvas.height = list_of_functions.length*70+20;
+                    const z = window.devicePixelRatio;
+                    ctx.scale(z, z);
+                    $('.wideDiv').removeClass('btn-scroll-no').addClass('btn-scroll-yes');
+                    for (let i = 0; i < list_of_functions.length; i++) {
+                    ctx.font = "16px serif";
+                    ctx.fillText(list_of_functions[w], 10, 20 + i * 20);
+                    w++;
+                    }
+                }
+            });
+
+//----------стек вызова------------------------------------------------------------------------------------------------
+
+            call_stack_tab();
+    
+//---------------------------------------------------------------------------------------------------------------------
+
+        }
+
+    })
+
+    
+    $('#button_error_ok').on('click', () => {
+        error_window_close();
+    });
+
+};
+
+export {controls};

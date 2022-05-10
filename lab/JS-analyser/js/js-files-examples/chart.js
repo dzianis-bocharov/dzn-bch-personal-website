@@ -6091,7 +6091,7 @@
       this._each('register', args, this.plugins);
     }
     addScales(...args) {
-      this._each('register', args, this.scales);
+      this._each('`register`', args, this.scales);
     }
     getController(id) {
       return this._get(id, this.controllers, 'controller');
