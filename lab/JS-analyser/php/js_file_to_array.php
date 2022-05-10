@@ -3,7 +3,7 @@
     $curly_braces_indicator = 0;
     $number_of_line = 0;
     $number_of_element = -1;
-    $file = fopen("../js/chart.js", "r"); 
+    $file = fopen("../js/js-files-examples/chart.js", "r"); 
     $element_read_start = false;
     while(!feof($file)) {
         $number_of_line++;
