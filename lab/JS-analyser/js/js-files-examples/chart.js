@@ -6573,7 +6573,7 @@
     const canvas = getCanvas(key);
     return Object.values(instances).filter((c) => c.canvas === canvas).pop();
   };
-  class Chart {//закладка18
+  class Chart {
     constructor(item, userConfig) {
       const me = this;
        const config = this.config = new Config(userConfig);

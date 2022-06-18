@@ -7,9 +7,9 @@ h1 {
     color: white;
     font-weight: bold;
 }
-button {
+button, div, img {
     border-style: none;
-
+    /* border-radius: 5px; */
 }
 button.lab1  {
     font-size: 16px;
