@@ -1,7 +1,10 @@
 class Chart {//закладка18
+
     constructor(item, userConfig) {
+
       const me = this;
-       const config = this.config = new Config(userConfig);
+
+      const config = this.config = new Config(userConfig);
       const initialCanvas = getCanvas(item);
       const existingChart = getChart(initialCanvas);
       if (existingChart) {

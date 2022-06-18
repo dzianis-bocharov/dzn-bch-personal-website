@@ -114,6 +114,7 @@
 			}
 			div#first, div#second {
 				border-right: solid white 4px;
+				border-radius: 0px;
 			}
 			div#mySlider1 {
 				margin-top: -15px;

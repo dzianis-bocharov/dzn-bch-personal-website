@@ -5,6 +5,7 @@
     $number_of_element = -1;
     $file = fopen("../js/js-files-examples/chart.js", "r"); 
     $element_read_start = false;
+    $the_only_class_return = null;
     while(!feof($file)) {
         $number_of_line++;
         $line = fgets($file);
@@ -84,6 +85,10 @@
 //----------номер последней строки для элемента--------------------------------------------------------------------------
 
             if($curly_braces_indicator==1) {
+                //return единственный class первого уровня
+                if(preg_match("/return/", $line, $found)){
+                    $the_only_class_return = mb_substr(trim($line),7,strlen(trim($line)) - 8);
+                };
                 if($element_read_start==true){
                     $all_lines[$number_of_element][3] = $number_of_line;
                     $element_read_start = false;
@@ -94,6 +99,15 @@
 
     }
     fclose($file);
-    echo "const call_stack_array = ". json_encode($all_lines) . ";\n";
+
+    echo $the_only_class_return;
+
+//---------- фильтр / массив / классы -----------------------------------------------------------------------------------
+
+    // echo var_dump($all_lines);
+
+    // echo $test123;
+
+//-----------------------------------------------------------------------------------------------------------------------
 
 ?>

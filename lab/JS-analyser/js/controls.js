@@ -1,10 +1,16 @@
-// привязка сценариев JavaScript к кнопкам
-
 import {canvas_blur_fix} from './canvas-blur-fix.js'; 
 import {call_stack_tab} from './call-stack-tab.js'; 
 import {error_window_open, error_window_close} from './error-window.js';
 
 function controls() {
+
+//----------схема для файла / начальное состояние / рисование трех точек----------------------------------------------------
+
+    var ctx = canvas_blur_fix(document.querySelector('#mainCanvas'));
+    ctx.font = "16px serif";
+    ctx.fillText("...", 5, 18);
+
+//----------прикрепление скриптов к кнопкам---------------------------------------------------------------------------------
 
     $('#switch').click(() => {
         const inputSwitchChecked = document.getElementById("test1").checked;
@@ -35,44 +41,22 @@ function controls() {
         document.getElementById('file2').value = '';
         $('.div-call-stack').html('...');
         $('.fileNames').val('...');
-        // $("input[type='file']").val = null; // удалить эту строку в конце разработки
         $('#error_message').html('');
         const inputSwitchChecked = document.getElementById("test1").checked;
         if(!inputSwitchChecked) {
             $('#switch').trigger('click');
             $('#fileInputHTMLwrapper').removeClass('notVisibleFileInputHTML');
         };
-
-//----------!!!ПОВТОРЯЮЩИЙСЯ КОД - ИМПОРТИРОВАТЬ МОДУЛЬ ------------------------------------------------------------
-
-        // удалить этот код в конце разработки
-        // function setupCanvas(canvas) {
-        //     var dpr = window.devicePixelRatio || 1;
-        //     var rect = canvas.getBoundingClientRect();
-        //     canvas.width = rect.width * dpr;
-        //     canvas.height = rect.height * dpr;
-        //     var ctx = canvas.getContext('2d');
-        //     ctx.scale(dpr, dpr);
-        //     return ctx;
-        //   }
-
-//------------------------------------------------------------------------------------------------------------------
-
         var ctx = canvas_blur_fix(document.querySelector('#mainCanvas'));
         ctx.canvas.height = 100;
         const z = window.devicePixelRatio;
         ctx.scale(z, z);
         $('.wideDiv').removeClass('btn-scroll-yes').addClass('btn-scroll-no');
         ctx.clearRect(0, 0, ctx.canvas.width,  ctx.canvas.height);      
-        // ctx.font = "24px serif";
-        // ctx.fillText("...", 5, 20);
         $('.tabs-ierarchy')[0].click();
-
         var ctx = canvas_blur_fix(document.querySelector('#mainCanvas'));
-        ctx.font = "24px serif";
-        ctx.fillText("...", 5, 14);
-      
-
+        ctx.font = "16px serif";
+        ctx.fillText("...", 5, 18);
     })
 
     $('#expandIerarchyScheme').on('click', ()=>{
@@ -114,33 +98,30 @@ function controls() {
             }
         };
     });
-
-//-----------------------------------------------------------------------------------------------------------------------
-    
-  var ctx = canvas_blur_fix(document.querySelector('#mainCanvas'));
-
-  ctx.font = "24px serif";
-
-  ctx.fillText("...", 5, 14);
+   
+//----------запуск----------------------------------------------------------------------------------------------------------
 
     $('#launch').on('click', (event)=>{
-
         event.preventDefault();
-
+        $('#error_message').html('');
         $('.tabs-ierarchy')[0].click();
 
-        if(!$('#file2')[0].files[0]){
+//----------обработка ошибок------------------------------------------------------------------------------------------------
 
-//---------- Window Error / открытие при наличии ошибки и остановка кода ------------------------------------------------
-            
-            error_window_open('Не выбран файл JavaScript!');
-
-//-----------------------------------------------------------------------------------------------------------------------
-            
+        if($('#test1').is(':checked') && (!$('#file1')[0].files[0] || !$('#file2')[0].files[0])){
+            if(!$('#file2')[0].files[0]){
+                error_window_open('<p>Не выбран файл JavaScript!</p>');
+            };
+            if(!$('#file1')[0].files[0]){
+                error_window_open('<p>Не выбран файл HTML!</p>');
+            };
+        }
+        else if(!$('#test1').is(':checked') && !$('#file2')[0].files[0]) {
+            error_window_open('<p>Не выбран файл JavaScript!</p>');
         }
         else {
 
-//----------схема для файла----------------------------------------------------------------------------------------------
+//----------схема для файла-------------------------------------------------------------------------------------------------
 
             ctx.clearRect(0, 0, ctx.canvas.width,  ctx.canvas.height);
 
@@ -165,16 +146,14 @@ function controls() {
                 }
             });
 
-//----------стек вызова------------------------------------------------------------------------------------------------
+//----------стек вызова-----------------------------------------------------------------------------------------------------
 
             call_stack_tab();
     
-//---------------------------------------------------------------------------------------------------------------------
+//--------------------------------------------------------------------------------------------------------------------------
 
         }
-
     })
-
     
     $('#button_error_ok').on('click', () => {
         error_window_close();
