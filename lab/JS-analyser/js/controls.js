@@ -104,7 +104,7 @@ function controls() {
     $('#launch').on('click', (event)=>{
         event.preventDefault();
         $('#error_message').html('');
-        $('.tabs-ierarchy')[0].click();
+        // $('.tabs-ierarchy')[0].click(); // включить в конце разработки
 
 //----------обработка ошибок------------------------------------------------------------------------------------------------
 
