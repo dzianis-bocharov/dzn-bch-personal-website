@@ -293,7 +293,7 @@
 								<a tabindex='-1' id='a1' href='https://www.google.com/'>Управляемый квадрат</a>
 							</div>
 							<div class='slideElement'>
-								<a tabindex='-1' id='a1' href='https://www.google.com/'>Тест#1</a>
+								<a tabindex='-1' id='a1' href='PHP/Test123.php'>Тест#1</a>
 							</div> 
 						</div>
 					</div>
