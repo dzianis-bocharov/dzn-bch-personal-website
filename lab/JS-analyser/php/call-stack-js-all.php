@@ -34,6 +34,11 @@
 
         require 'js-elements-extractor.php';
         $call_stack = js_elements_extractor($file_js, $all_lines, $the_only_class_return);
+
+        // echo "<br><br><br>";
+        // print_r($call_stack);
+        // echo "<br><br><br>";
+
         function build_call_stack_list($call_stack, $parent) {
             foreach ($call_stack as $k => $v) {
                 if(!is_array($v)){
@@ -47,14 +52,26 @@
                         echo '()';
                     } elseif ($k == 3 && $parent !== 'empty') {
                         echo '<br>------------------------------<br>'.$parent.'<br>';
-                    } elseif ($k == 4) {
-                    //ничего не делать
-                    } elseif ($k == 3 && $parent == 'empty') {
-                        $brackets = [];
+                        $brackets = '';
                         if($call_stack[0]=='class'){
                             $brackets = ' {}';
                         }elseif($call_stack[1]=='method'){
                             $brackets = '()';
+                        };
+                        $parent = $parent.' / '.$call_stack[0].' '.$call_stack[1].$brackets;
+                    } elseif ($k == 4) {
+                    //ничего не делать
+                    } elseif ($k==2 && $call_stack[0]=='const') {
+                    //ничего не делать
+                    } elseif ($k == 3 && $parent == 'empty') {
+                        $brackets = '';
+                        if($call_stack[0]=='class'){
+                            $brackets = ' {}';
+                        }elseif($call_stack[1]=='method'){
+                            $brackets = '()';
+                        }
+                        else {
+
                         };
                         $parent = $call_stack[0].' '.$call_stack[1].$brackets;
                     } else {

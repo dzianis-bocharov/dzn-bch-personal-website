@@ -91,9 +91,9 @@
         // echo 'New York City<br><br><br>';//УДАЛИТЬ!
         // print_r($result_main);//УДАЛИТЬ!
         if(count($internal_elements)){
-            echo '<br><br><br>';//УДАЛИТЬ!
-            print_r($internal_elements);
-            echo '<br><br><br>';//УДАЛИТЬ!
+            // echo '<br><br><br>';//УДАЛИТЬ!
+            // print_r($internal_elements);
+            // echo '<br><br><br>';//УДАЛИТЬ!
         };
 
         return $result_main;
