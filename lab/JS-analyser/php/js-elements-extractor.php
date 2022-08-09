@@ -2,22 +2,72 @@
     function js_elements_extractor($file_js, $all_lines, $the_only_class_return){
 
 
-        echo '<br>$call_stack / эксперимент<br>';
-
+        echo '<br>$call_stack / эксперимент<br><br>';
         
         $call_stack = [];
-        
+
         $the_only_class_return_element = $all_lines[array_search($the_only_class_return, array_column($all_lines, 1))];
-        
+        $id = 1;
+        $id_parent = 0;
+        $call_stack['id'] = $id;
+        $call_stack['parent_id'] = $id_parent;
+        $call_stack['type_of_element'] = $the_only_class_return_element[0];
+        $call_stack['name_of_element'] = $the_only_class_return_element[1];
+        $call_stack['first_line'] = $the_only_class_return_element[2];
+        $call_stack['last_line'] = $the_only_class_return_element[3];
 
+        // print_r($call_stack);
+
+        foreach($call_stack as $key=>$value) {
+            echo $key.' --- '.$value.'<br>';
+        };
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        
+        
         // добавить id для элемента
-        // добавить id для родитиеля
+        // $call_stack[0][0] = $id;
 
-        array_push($call_stack, $the_only_class_return_element);
+        // // добавить id для родитиеля
+        // $call_stack[0][1] = $id_parent;
 
-        require 'parse-regexp.php';
+
+
+        // array_push($call_stack, $the_only_class_return_element);
+
+
+        // print_r($call_stack);
+        // echo '<br>';
+
+        // require 'parse-regexp.php';
         
-        $file_lines_array = file($file_js);
+        // $file_lines_array = file($file_js);
         
 //----------------------------------------------------------------------------------------------------
 //----------------------------------------------------------------------------------------------------

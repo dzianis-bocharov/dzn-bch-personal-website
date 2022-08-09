@@ -84,6 +84,7 @@
             };
         };
         $parent = 'empty';
-        build_call_stack_list($call_stack, $parent);
+        // build_call_stack_list($call_stack, $parent);
+        echo '<br>здесь будет стек вызова<br>';
     };
 ?>
