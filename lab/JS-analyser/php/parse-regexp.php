@@ -74,9 +74,9 @@
                                         };
                                     }
                                     else {
-                                        echo '<br>Error!<br><br>';
-                                        echo $file_lines_array[$x];
-                                        exit();
+                                        // echo '<br>Error!<br><br>';
+                                        // echo $file_lines_array[$x];
+                                        //exit();
                                     };
                                 };
                             };
