@@ -4,9 +4,9 @@
         $call_stack = [];
         $the_only_class_return_element = $all_lines[array_search($the_only_class_return, array_column($all_lines, 1))];
         $id = 1;
-        $id_parent = 0;
+        $parent_id = 0;
         $call_stack['id'] = $id;
-        $call_stack['parent_id'] = $id_parent;
+        $call_stack['parent_id'] = $parent_id;
         $call_stack['type_of_element'] = $the_only_class_return_element[0];
         $call_stack['name_of_element'] = $the_only_class_return_element[1];
         $call_stack['first_line'] = $the_only_class_return_element[2];
@@ -20,7 +20,8 @@
         require 'parse-regexp.php';
         $file_lines_array = file($file_js);
         $element = $call_stack;
-        $x = parse_regexp($file_lines_array,$element,$all_lines);
+        $parent_id = $parent_id + 1;
+        $x = parse_regexp($file_lines_array,$element,$all_lines,$id,$parent_id);
         echo '<br>';
         echo 'извлеченные методы'.'<br>';
         echo '<br>';
