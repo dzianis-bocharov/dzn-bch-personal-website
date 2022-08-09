@@ -23,7 +23,7 @@
         echo 'var - ' . count(all_lines_filter_element_callback($all_lines, 'var')) . ' шт.' . '<br>';
         echo 'let - ' . count(all_lines_filter_element_callback($all_lines, 'let')) . ' шт.' . '<br>';
         echo 'const - ' . count(all_lines_filter_element_callback($all_lines, 'const')) . ' шт.' . '<br>';
-        echo '----------------------------------------------------------------------------------------------------'.'<br><br>';
+        echo '----------------------------------------------------------------------------------------------------'.'<br>';
 
 //---------- поиск единственного возвращаемого класса ------------------------------------------------
 
