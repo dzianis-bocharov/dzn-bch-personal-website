@@ -18,10 +18,14 @@
 //----------------------------------------------------------------------------------------------------
 
         require 'parse-regexp.php';
+        $file_lines_array = file($file_js);
+        $element = $call_stack;
         $x = parse_regexp($file_lines_array,$element,$all_lines);
-        echo '<br><br><br>';
-        print_r($x);
-        echo '<br><br><br>';
+        echo '<br>';
+        echo 'извлеченные методы'.'<br>';
+        echo '<br>';
+        print_r($x[52]);
+        echo '<br>';
 
 //----------------------------------------------------------------------------------------------------
 
