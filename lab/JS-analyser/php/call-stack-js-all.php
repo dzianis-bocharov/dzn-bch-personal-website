@@ -39,52 +39,61 @@
         // print_r($call_stack);
         // echo "<br><br><br>";
 
-        function build_call_stack_list($call_stack, $parent) {
-            foreach ($call_stack as $k => $v) {
-                if(!is_array($v)){
-                    if($k==0){
-                        echo $v.' ';
-                    } elseif($k==1){
-                        echo $v;
-                    } elseif($k==2 && $call_stack[0]=='class'){
-                        echo ' {}';
-                    } elseif ($k==2 && $call_stack[0]=='method') {
-                        echo '()';
-                    } elseif ($k == 3 && $parent !== 'empty') {
-                        echo '<br>------------------------------<br>'.$parent.'<br>';
-                        $brackets = '';
-                        if($call_stack[0]=='class'){
-                            $brackets = ' {}';
-                        }elseif($call_stack[1]=='method'){
-                            $brackets = '()';
-                        };
-                        $parent = $parent.' / '.$call_stack[0].' '.$call_stack[1].$brackets;
-                    } elseif ($k == 4) {
-                    //ничего не делать
-                    } elseif ($k==2 && $call_stack[0]=='const') {
-                    //ничего не делать
-                    } elseif ($k == 3 && $parent == 'empty') {
-                        $brackets = '';
-                        if($call_stack[0]=='class'){
-                            $brackets = ' {}';
-                        }elseif($call_stack[1]=='method'){
-                            $brackets = '()';
-                        }
-                        else {
+        function build_call_stack_list() {
 
-                        };
-                        $parent = $call_stack[0].' '.$call_stack[1].$brackets;
-                    } else {
-                        echo '<br><br><br><br>Error!!! Элемент не относится к функциям!<br><br>';
-                    }; 
-                } else {
-                    echo '<br>';
-                    build_call_stack_list($v, $parent);
-                };
-            };
         };
-        $parent = 'empty';
+
+        build_call_stack_list();
+        
+
+        // function build_call_stack_list($call_stack, $parent) {
+        //     foreach ($call_stack as $k => $v) {
+        //         if(!is_array($v)){
+        //             if($k==2){
+        //                 echo $v.' ';
+        //             } elseif($k==3){
+        //                 echo $v;
+        //             } elseif($k==4 && $call_stack[0]=='class'){
+        //                 echo ' {}';
+        //             } elseif ($k==2 && $call_stack[0]=='method') {
+        //                 echo '()';
+        //             } elseif ($k == 3 && $parent !== 'empty') {
+        //                 echo '<br>------------------------------<br>'.$parent.'<br>';
+        //                 $brackets = '';
+        //                 if($call_stack[0]=='class'){
+        //                     $brackets = ' {}';
+        //                 }elseif($call_stack[1]=='method'){
+        //                     $brackets = '()';
+        //                 };
+        //                 $parent = $parent.' / '.$call_stack[0].' '.$call_stack[1].$brackets;
+        //             } elseif ($k == 6) {
+        //             //ничего не делать
+        //             } elseif ($k==4 && $call_stack[0]=='const') {
+        //             //ничего не делать
+        //             } elseif ($k == 5 && $parent == 'empty') {
+        //                 $brackets = '';
+        //                 if($call_stack[2]=='class'){
+        //                     $brackets = ' {}';
+        //                 }elseif($call_stack[3]=='method'){
+        //                     $brackets = '()';
+        //                 }
+        //                 else {
+
+        //                 };
+        //                 $parent = $call_stack[2].' '.$call_stack[3].$brackets;
+        //             } else {
+        //                 echo '<br><br><br><br>Error!!! Элемент не относится к функциям!<br><br>';
+        //             }; 
+        //         } else {
+        //             echo '<br>';
+        //             build_call_stack_list($v, $parent);
+        //         };
+        //     };
+        // };
+        // $parent = 'empty';
         // build_call_stack_list($call_stack, $parent);
+
+
         echo '<br>здесь будет стек вызова<br>';
     };
 ?>
