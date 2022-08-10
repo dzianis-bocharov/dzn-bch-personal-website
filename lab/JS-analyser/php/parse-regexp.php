@@ -3,12 +3,12 @@
         $external_elements = $all_lines;
         $internal_elements = [];
         $reserved_elements = [];
-        $type_of_parent = $element['type_of_element'];
+        $type_of_parent = $element[0]['type_of_element'];
         $result = [];
         $curly_braces_indicator = 0;
         $count = 0;
         if ($type_of_parent == 'class') {
-            for($x = (int)$element["first_line"]-1; $x<=(int)$element["last_line"]-1; $x++){
+            for($x = (int)$element[0]["first_line"]-1; $x<=(int)$element[0]["last_line"]-1; $x++){
                 if(preg_match("/class\s{1,}\S*\s{/i", $file_lines_array[$x], $found)){
                     $curly_braces_indicator++;
                 }
@@ -22,6 +22,7 @@
                             $id++;
                             $result[$count]['id'] = $id;
                             $result[$count]['parent_id'] = $parent_id;
+                            $result[$count]['type_of_element'] = 'method';
                             $result[$count]['name_of_element'] = $str_result;
                             $result[$count]['first_line'] = $x+1;
                         };
