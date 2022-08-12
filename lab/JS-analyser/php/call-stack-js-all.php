@@ -33,7 +33,6 @@
 
         require 'js-elements-extractor.php';
         $call_stack = js_elements_extractor($file_js, $all_lines, $the_only_class_return);
-        echo '<br>здесь будет стек вызова<br><br>';
-        // print_r($call_stack[0]);
+        print_r($call_stack);
     };
 ?>
