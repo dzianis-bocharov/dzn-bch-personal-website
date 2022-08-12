@@ -33,6 +33,20 @@
 
         require 'js-elements-extractor.php';
         $call_stack = js_elements_extractor($file_js, $all_lines, $the_only_class_return);
-        print_r($call_stack);
+        // print_r($call_stack);
+
+        function call_stack_show_recursive($call_stack) {
+
+            foreach($call_stack as &$element){
+                echo $element['name_of_element'] . '<br>';
+                if($element['children']!=='no'){
+                    call_stack_show_recursive($element['children']);
+                };
+            }
+
+        };
+
+        call_stack_show_recursive($call_stack);
+
     };
 ?>
