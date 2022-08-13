@@ -19,7 +19,6 @@
         };
 
         $path = $element['path'].$element['type_of_element'].' '.trim($element['name_of_element']).$braces.' / ';
-        // $path = 
 
         if ($type_of_parent == 'class') {
             for($x = (int)$element["first_line"]-1; $x<=(int)$element["last_line"]-1; $x++){
@@ -57,7 +56,9 @@
                             $a = implode($found2[0]);
                             $b = strlen($a);
                             $c = trim(substr($a,5,$b-5-1));
-                            array_push($internal_elements,'const '.$c);
+                            $d = ['type_of_element'=>'const ','name_of_element'=>$c];
+                            // array_push($internal_elements,'const '.$c);
+                            array_push($internal_elements,$d);
                         }
                         
 //----------this с левой стороны - ничего не делать----------
@@ -88,7 +89,13 @@
 
                     elseif (preg_match_all("/^me\./", trim(implode($found[0])), $found2)) {
 
-                        // echo $file_lines_array[$x].'<br>';                   
+                        // echo $file_lines_array[$x].'<br>';
+
+                        // foreach($internal_elements as $element3){
+                        //     echo $element3['name_of_element'];
+                        //     echo'<br>';
+                        // };
+                        // exit();
 
                     } 
 
