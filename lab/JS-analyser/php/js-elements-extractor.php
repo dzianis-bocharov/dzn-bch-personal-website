@@ -8,6 +8,7 @@
         $call_stack[0]['name_of_element'] = $the_only_class_return_element[1];
         $call_stack[0]['first_line'] = $the_only_class_return_element[2];
         $call_stack[0]['last_line'] = $the_only_class_return_element[3];
+        $call_stack[0]['path'] = null;
         $call_stack[0]['children'] = 'no';
 
 //---------------------------------------------------------------------------------------------------- 

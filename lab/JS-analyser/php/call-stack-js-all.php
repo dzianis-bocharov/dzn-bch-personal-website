@@ -33,20 +33,30 @@
 
         require 'js-elements-extractor.php';
         $call_stack = js_elements_extractor($file_js, $all_lines, $the_only_class_return);
-        // print_r($call_stack);
-
+        echo '<br>';
         function call_stack_show_recursive($call_stack) {
-
             foreach($call_stack as &$element){
-                echo $element['name_of_element'] . '<br>';
+                $braces = null;
+                $path=$element['path'];
+                if($element['path']) {
+                    $dotted_line = '<br>----------<br>';
+                    $path = substr(trim($element['path']), 0, -1); 
+                }else{
+                    $dotted_line = null;
+                };
+
+                if($element['type_of_element']=='class'){
+                    $braces = ' {}';
+                }elseif($element['type_of_element']=='method'){
+                    $braces = '()';
+                };
+                echo $element['type_of_element'].' '.$element['name_of_element'].$braces.$dotted_line.' '.$path.'<br><br>';
                 if($element['children']!=='no'){
                     call_stack_show_recursive($element['children']);
                 };
             }
-
         };
-
+        $path = null;
         call_stack_show_recursive($call_stack);
-
     };
 ?>
