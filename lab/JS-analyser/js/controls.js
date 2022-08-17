@@ -104,22 +104,23 @@ function controls() {
     $('#launch').on('click', (event)=>{
         event.preventDefault();
         $('#error_message').html('');
-        // $('.tabs-ierarchy')[0].click(); // включить в конце разработки
+        $('.tabs-ierarchy')[4].click(); // поменять на 0
 
 //----------обработка ошибок------------------------------------------------------------------------------------------------
 
-        if($('#test1').is(':checked') && (!$('#file1')[0].files[0] || !$('#file2')[0].files[0])){
-            if(!$('#file2')[0].files[0]){
-                error_window_open('<p>Не выбран файл JavaScript!</p>');
-            };
-            if(!$('#file1')[0].files[0]){
-                error_window_open('<p>Не выбран файл HTML!</p>');
-            };
-        }
-        else if(!$('#test1').is(':checked') && !$('#file2')[0].files[0]) {
-            error_window_open('<p>Не выбран файл JavaScript!</p>');
-        }
-        else {
+        // if($('#test1').is(':checked') && (!$('#file1')[0].files[0] || !$('#file2')[0].files[0])){
+        //     if(!$('#file2')[0].files[0]){
+        //         error_window_open('<p>Не выбран файл JavaScript!</p>');
+        //     };
+        //     if(!$('#file1')[0].files[0]){
+        //         error_window_open('<p>Не выбран файл HTML!</p>');
+        //     };
+        // }
+        // else if(!$('#test1').is(':checked') && !$('#file2')[0].files[0]) {
+        //     error_window_open('<p>Не выбран файл JavaScript!</p>');
+        // }
+        // else 
+        {
 
 //----------схема для файла-------------------------------------------------------------------------------------------------
 
@@ -158,6 +159,55 @@ function controls() {
     $('#button_error_ok').on('click', () => {
         error_window_close();
     });
+
+//----------горячие кнопки----------
+
+    document.addEventListener ("keydown", function (zEvent) {
+        // if (zEvent.ctrlKey  &&  zEvent.altKey  &&  zEvent.key === "1") {
+        if (zEvent.key === "1") {
+
+            $('.tabs-ierarchy')[0].click();
+        }
+    });
+
+    document.addEventListener ("keydown", function (zEvent) {
+        if (zEvent.key === "2") {
+            $('.tabs-ierarchy')[1].click();
+        }
+    });
+
+    document.addEventListener ("keydown", function (zEvent) {
+        if (zEvent.key === "3") {
+            $('.tabs-ierarchy')[2].click();
+        }
+    });
+
+    document.addEventListener ("keydown", function (zEvent) {
+        if (zEvent.key === "4") {
+            $('.tabs-ierarchy')[3].click();
+        }
+    });
+
+    document.addEventListener ("keydown", function (zEvent) {
+        if (zEvent.key === "5") {
+            $('.tabs-ierarchy')[4].click();
+        }
+    });
+
+    
+    document.addEventListener ("keydown", function (zEvent) {
+        // if (zEvent.keyCode === 70) {
+        if (zEvent.key === 'f') {
+                $('#expandIerarchyScheme').click();
+        }
+    });
+
+    document.addEventListener ("keydown", function (zEvent) {
+        if (zEvent.key === ' ') {
+            $('#launch').click();
+        }
+    });
+
 
 };
 
