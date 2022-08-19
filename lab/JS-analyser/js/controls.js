@@ -171,6 +171,18 @@ function controls() {
         }
     })
     
+
+    
+
+
+    $('.copyText').on('click', (event)=>{
+        event.preventDefault();
+        alert('Dzianis Bocharov');
+    });
+
+
+
+
     $('#button_error_ok').on('click', () => {
         error_window_close();
     });
@@ -226,6 +238,10 @@ function controls() {
             $('#launch').click();
         }
     });
+
+
+
+    // $('.copyText')
 
 
 };
