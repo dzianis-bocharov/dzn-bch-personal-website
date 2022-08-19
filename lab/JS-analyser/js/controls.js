@@ -1,6 +1,6 @@
-import {canvas_blur_fix} from './canvas-blur-fix.js'; 
-import {file_code_tab} from './file-code-tab.js'; 
-import {call_stack_tab} from './call-stack-tab.js'; 
+import {canvas_blur_fix} from './canvas-blur-fix.js';
+import {file_code_tab} from './file-code-tab.js';
+import {call_stack_tab} from './call-stack-tab.js';
 import {error_window_open, error_window_close} from './error-window.js';
 
 function controls() {
@@ -10,6 +10,23 @@ function controls() {
     var ctx = canvas_blur_fix(document.querySelector('#mainCanvas'));
     ctx.font = "16px serif";
     ctx.fillText("...", 5, 18);
+
+//----------начальное анализатора / номер нажатой вкладки------------------------------------------------------------------
+
+    const tabs_state = {
+        position: 1
+    };
+
+
+    //удалить
+    // const itemInfo = {
+    //     position: {current: 0, min: 0, max: elements.length - 1}
+    //     ,
+    //     offset: 0
+    //     ,
+    //     update: function(value) {this.position.current += value;this.offset -= value}
+    // };
+
 
 //----------прикрепление скриптов к кнопкам---------------------------------------------------------------------------------
 
@@ -24,12 +41,12 @@ function controls() {
             document.getElementById('file-name1').value = '...';
         }
     });
-   
+
      $('.input-file-btn').on('click', (event) => {
         const btnInputId = event.target.id
         const inputFileId = '#file' + btnInputId.substring(btnInputId.length-1);
-        $(inputFileId).trigger('click'); 
-        const inputFileName = '#file-name' + btnInputId.substring(btnInputId.length-1) 
+        $(inputFileId).trigger('click');
+        const inputFileName = '#file-name' + btnInputId.substring(btnInputId.length-1)
         $(inputFileId).on('change', function () {
             const fileName = $(this)[0].files[0].name;
             $(inputFileName).val(fileName);
@@ -53,7 +70,7 @@ function controls() {
         const z = window.devicePixelRatio;
         ctx.scale(z, z);
         $('.wideDiv').removeClass('btn-scroll-yes').addClass('btn-scroll-no');
-        ctx.clearRect(0, 0, ctx.canvas.width,  ctx.canvas.height);      
+        ctx.clearRect(0, 0, ctx.canvas.width,  ctx.canvas.height);
         $('.tabs-ierarchy')[0].click();
         var ctx = canvas_blur_fix(document.querySelector('#mainCanvas'));
         ctx.font = "16px serif";
@@ -85,6 +102,11 @@ function controls() {
                 if($(divsResult[i]).hasClass('div-result-hide')){
                     $(divsResult[i]).removeClass('div-result-hide');
                 };
+
+                tabs_state.position = i+1;
+
+
+                
             }
             else{
                 if(!$(tabs[i]).hasClass('tab-ierarchyScheme-notmal')){
@@ -100,19 +122,24 @@ function controls() {
 
             if(i == 0) {
                 $('.div-main-canvas').focus();
+                // tabs_state.position = 555;
             }else if(i == 1) {
+                // tabs_state.position = 2;
                 $('.div-file-code').focus();
             }else if(i == 2) {
                 $('.div-element-scheme').focus();
+                // tabs_state.position = 3;
             }else if(i == 3){
                 $('.div-element-code').focus();
+                // tabs_state.position = 4;
             }else if(i == 4){
                 $('.div-call-stack').focus();
+                // tabs_state.position = 5;
             };
         };
 
     });
-   
+
 //----------запуск----------------------------------------------------------------------------------------------------------
 
     $('#launch').on('click', (event)=>{
@@ -133,7 +160,7 @@ function controls() {
         // else if(!$('#test1').is(':checked') && !$('#file2')[0].files[0]) {
         //     error_window_open('<p>Не выбран файл JavaScript!</p>');
         // }
-        // else 
+        // else
         {
 
 //----------схема для файла-------------------------------------------------------------------------------------------------
@@ -165,19 +192,19 @@ function controls() {
 
             file_code_tab();
             call_stack_tab();
-    
+
 //--------------------------------------------------------------------------------------------------------------------------
 
         }
     })
-    
 
-    
+
+
 
 
     $('.copyText').on('click', (event)=>{
         event.preventDefault();
-        alert('Dzianis Bocharov');
+        alert(tabs_state.position);
     });
 
 
