@@ -168,6 +168,9 @@ function controls() {
         // if (zEvent.ctrlKey  &&  zEvent.altKey  &&  zEvent.key === "1") {
         if (zEvent.key === "1") {
 
+
+            //код файла
+
             $('.tabs-ierarchy')[0].click();
         }
     });
