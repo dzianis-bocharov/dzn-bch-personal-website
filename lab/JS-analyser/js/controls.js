@@ -203,11 +203,29 @@ function controls() {
 
 
     $('.copyText').on('click', (event)=>{
+
+
         event.preventDefault();
+        
         alert(tabs_state.position);
+
+
+
+        // function copyDivToClipboard() {
+        //     var range = document.createRange();
+        //     range.selectNode(document.getElementById("file-code"));
+        //     window.getSelection().removeAllRanges(); // clear current selection
+        //     window.getSelection().addRange(range); // to select text
+        //     document.execCommand("copy");
+        //     window.getSelection().removeAllRanges();// to deselect
+        //    }
+
+
+
+        //    copyDivToClipboard('file-code')
+
+
     });
-
-
 
 
     $('#button_error_ok').on('click', () => {
