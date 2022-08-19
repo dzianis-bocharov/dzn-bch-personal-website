@@ -94,7 +94,7 @@ div#jsFilesUpload {
 /* div#result {
 
 } */
-div.div-call-stack {
+div.div-call-stack, div.div-file-code, div.div-element-code, div.div-element-scheme {
   overflow-y: auto;
   word-wrap: break-word;  
   padding: 5px;
