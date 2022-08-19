@@ -190,59 +190,31 @@ function controls() {
 //----------горячие кнопки----------
 
     document.addEventListener ("keydown", function (zEvent) {
-        // if (zEvent.ctrlKey  &&  zEvent.altKey  &&  zEvent.key === "1") {
         if (zEvent.key === "1") {
-
-
-            //код файла
-
             $('.tabs-ierarchy')[0].click();
-        }
-    });
-
-    document.addEventListener ("keydown", function (zEvent) {
+        };
         if (zEvent.key === "2") {
             $('.tabs-ierarchy')[1].click();
-        }
-    });
-
-    document.addEventListener ("keydown", function (zEvent) {
+        };
         if (zEvent.key === "3") {
             $('.tabs-ierarchy')[2].click();
-        }
-    });
-
-    document.addEventListener ("keydown", function (zEvent) {
+        };
         if (zEvent.key === "4") {
             $('.tabs-ierarchy')[3].click();
-        }
-    });
-
-    document.addEventListener ("keydown", function (zEvent) {
+        };
         if (zEvent.key === "5") {
             $('.tabs-ierarchy')[4].click();
-            // $('.div-call-stack').focus();
-        }
-    });
-
-    
-    document.addEventListener ("keydown", function (zEvent) {
-        // if (zEvent.keyCode === 70) {
+        };
         if (zEvent.code === 'KeyF') {
-                $('#expandIerarchyScheme').click();
-        }
-    });
-
-    document.addEventListener ("keydown", function (zEvent) {
+            $('#expandIerarchyScheme').click();
+        };
         if (zEvent.key === ' ') {
             $('#launch').click();
-        }
+        };
+        if (zEvent.code === 'KeyC') {
+            $('.copyText').click();
+        };
     });
-
-
-
-    // $('.copyText')
-
 
 };
 
