@@ -192,10 +192,54 @@ function controls() {
 
 
     $('.copyText').on('click', (event)=>{
-
         event.preventDefault();
        
-        alert(tabs_state.position);
+        //tabs_state.position
+
+        // alert('New York City');
+
+
+        var file_code = $('#file-code').text();
+
+
+        // // $('#copy').on('click',function(){
+        //     var code = document.querySelector('#file-code'); // #text - блок из которого нужно скопировать
+        //     var range = document.createRange();
+        //     range.selectNode(code);
+        //     window.getSelection().addRange(range);
+          
+        //     try {
+        //       var successful = document.execCommand('copy');
+        //       var msg = successful?'удачно':'неудачно';
+        //       alert('Код скопирован '+msg);
+        //     } catch(err) {
+        //       alert('Код не скопирован автоматически :с'+'\n'+'Попробуйте вручную');
+        //     }
+        //     window.getSelection().removeAllRanges();
+        // //   });
+
+
+
+
+
+        function copyToClipboard(text) {
+            var dummy = document.createElement("textarea");
+            // to avoid breaking orgain page when copying more words
+            // cant copy when adding below this code
+            // dummy.style.display = 'none'
+            document.body.appendChild(dummy);
+            //Be careful if you use texarea. setAttribute('value', value), which works with "input" does not work with "textarea". – Eduard
+            dummy.value = text;
+            dummy.select();
+            document.execCommand("copy");
+            document.body.removeChild(dummy);
+        }
+        copyToClipboard(file_code);
+
+
+
+
+
 
     });
 
