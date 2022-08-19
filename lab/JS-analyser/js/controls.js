@@ -202,7 +202,7 @@ function controls() {
     
     document.addEventListener ("keydown", function (zEvent) {
         // if (zEvent.keyCode === 70) {
-        if (zEvent.key === 'f') {
+        if (zEvent.code === 'KeyF') {
                 $('#expandIerarchyScheme').click();
         }
     });
