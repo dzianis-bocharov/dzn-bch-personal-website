@@ -49,8 +49,8 @@
                             <div class='wrapper'>
                                 <input type='file' id='file1'>
                                 <div id=''>
-                                <input type='text' id='file-name1' class = 'fileNames border-radius-left' value='...' readonly='readonly'>
-                                <input type='button' value='Файл' id='file-btn1' class='input-file-btn unselectable border-radius-right'>
+                                <input tabindex="-1" type='text' id='file-name1' class = 'fileNames border-radius-left' value='...' readonly='readonly'>
+                                <input tabindex="-1" type='button' value='Файл' id='file-btn1' class='input-file-btn unselectable border-radius-right'>
                                 </div> 
                             </div>
                             <br>
@@ -60,21 +60,21 @@
                         <div class='wrapper'>
                             <input type='file' id='file2'>
                             <div>
-                            <input type='text' id='file-name2' class = 'fileNames border-radius-left' value='...' readonly='readonly'>
-                            <input type='button' value='Файл' id='file-btn2' class='input-file-btn unselectable border-radius-right'>
+                            <input tabindex="-1" type='text' id='file-name2' class = 'fileNames border-radius-left' value='...' readonly='readonly'>
+                            <input tabindex="-1" type='button' value='Файл' id='file-btn2' class='input-file-btn unselectable border-radius-right'>
                             </div> 
                         </div>
                         <br>
-                        <input type='submit' id='launch' class='control-btn border-radius-all' value="ЗАПУСК"> 
-                        <button id='reset' class='control-btn unselectable border-radius-all'>Сброс</button>
+                        <input tabindex="-1" type='submit' id='launch' class='control-btn border-radius-all' value="ЗАПУСК"> 
+                        <button tabindex="-1" id='reset' class='control-btn unselectable border-radius-all'>Сброс</button>
                     </form>
                 </div>
-                <a id='a1' href='../MainPage.php'>Навигация /// Lab / Home</a>
+                <a tabindex="-1" id='a1' href='../MainPage.php'>Навигация /// Lab / Home</a>
             </div>
             <div id='result' class="normalWidthIerarchyScheme border-radius-all">
                 <span class='sector-label unselectable'>Иерархия функций в анализируемом скрипте</span>
-                <button class='copyText unselectable border-radius-all'>Копировать<br>текст</button>
-                <button class='wideDiv btn-scroll-no unselectable border-radius-all'  id='expandIerarchyScheme'>Развернуть на<br> ширину окна</button>
+                <button tabindex="-1" class='copyText unselectable border-radius-all'>Копировать<br>текст</button>
+                <button tabindex="-1" class='wideDiv btn-scroll-no unselectable border-radius-all'  id='expandIerarchyScheme'>Развернуть на<br> ширину окна</button>
                 <hr class="white-line-2">
                 <div>
                     <div id='tab-fileScheme' class='tabs-ierarchy tab-ierarchyScheme-active border-radius-up'>Схема для файла</div>
@@ -84,13 +84,13 @@
                     <div id='tab-callStack' class='tabs-ierarchy tab-ierarchyScheme-normal border-radius-up'>Cтек вызова</div>
                 </div>
                 <div id='ierarchyScheme' class="border-radius-bottom">
-                    <div class="div-main-canvas div-result">
+                    <div tabindex="0" class="div-main-canvas div-result">
                         <canvas id='mainCanvas' class='smallSizeCanvas'></canvas>
                     </div>
-                    <div class="div-file-code div-result div-result-hide">...</div>
-                    <div class="div-element-scheme div-result div-result-hide">...</div>
-                    <div class="div-element-code div-result div-result-hide">...</div>
-                    <div id='div-call-stack' class="div-call-stack div-result div-result-hide">...</div>
+                    <div tabindex="0" class="div-file-code div-result div-result-hide">...</div>
+                    <div tabindex="0" class="div-element-scheme div-result div-result-hide">...</div>
+                    <div tabindex="0" class="div-element-code div-result div-result-hide">...</div>
+                    <div tabindex="0" id='div-call-stack' class="div-call-stack div-result div-result-hide">...</div>
                 </div>
             </div>
         </div>

@@ -97,7 +97,20 @@ function controls() {
                     $(divsResult[i]).addClass('div-result-hide');
                 };
             }
+
+            if(i == 0) {
+                $('.div-main-canvas').focus();
+            }else if(i == 1) {
+                $('.div-file-code').focus();
+            }else if(i == 2) {
+                $('.div-element-scheme').focus();
+            }else if(i == 3){
+                $('.div-element-code').focus();
+            }else if(i == 4){
+                $('.div-call-stack').focus();
+            };
         };
+
     });
    
 //----------запуск----------------------------------------------------------------------------------------------------------
@@ -196,6 +209,7 @@ function controls() {
     document.addEventListener ("keydown", function (zEvent) {
         if (zEvent.key === "5") {
             $('.tabs-ierarchy')[4].click();
+            // $('.div-call-stack').focus();
         }
     });
 
@@ -215,5 +229,7 @@ function controls() {
 
 
 };
+
+
 
 export {controls};
