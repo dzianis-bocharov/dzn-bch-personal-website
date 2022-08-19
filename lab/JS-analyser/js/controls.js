@@ -87,7 +87,7 @@ function controls() {
             $('#expandIerarchyScheme').html('Развернуть на<br> ширину окна');
         };
     })
-
+    
     $('.tabs-ierarchy').on('click', (e) => {
         let tabs = $('.tabs-ierarchy');
         let divsResult = $('.div-result');//
@@ -102,11 +102,7 @@ function controls() {
                 if($(divsResult[i]).hasClass('div-result-hide')){
                     $(divsResult[i]).removeClass('div-result-hide');
                 };
-
                 tabs_state.position = i+1;
-
-
-                
             }
             else{
                 if(!$(tabs[i]).hasClass('tab-ierarchyScheme-notmal')){
@@ -119,25 +115,18 @@ function controls() {
                     $(divsResult[i]).addClass('div-result-hide');
                 };
             }
-
             if(i == 0) {
                 $('.div-main-canvas').focus();
-                // tabs_state.position = 555;
             }else if(i == 1) {
-                // tabs_state.position = 2;
                 $('.div-file-code').focus();
             }else if(i == 2) {
                 $('.div-element-scheme').focus();
-                // tabs_state.position = 3;
             }else if(i == 3){
                 $('.div-element-code').focus();
-                // tabs_state.position = 4;
             }else if(i == 4){
                 $('.div-call-stack').focus();
-                // tabs_state.position = 5;
             };
         };
-
     });
 
 //----------запуск----------------------------------------------------------------------------------------------------------
@@ -204,26 +193,9 @@ function controls() {
 
     $('.copyText').on('click', (event)=>{
 
-
         event.preventDefault();
-        
+       
         alert(tabs_state.position);
-
-
-
-        // function copyDivToClipboard() {
-        //     var range = document.createRange();
-        //     range.selectNode(document.getElementById("file-code"));
-        //     window.getSelection().removeAllRanges(); // clear current selection
-        //     window.getSelection().addRange(range); // to select text
-        //     document.execCommand("copy");
-        //     window.getSelection().removeAllRanges();// to deselect
-        //    }
-
-
-
-        //    copyDivToClipboard('file-code')
-
 
     });
 
