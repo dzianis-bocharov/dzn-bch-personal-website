@@ -1,4 +1,5 @@
 import {canvas_blur_fix} from './canvas-blur-fix.js'; 
+import {file_code_tab} from './file-code-tab.js'; 
 import {call_stack_tab} from './call-stack-tab.js'; 
 import {error_window_open, error_window_close} from './error-window.js';
 
@@ -149,6 +150,7 @@ function controls() {
 
 //----------стек вызова-----------------------------------------------------------------------------------------------------
 
+            file_code_tab();
             call_stack_tab();
     
 //--------------------------------------------------------------------------------------------------------------------------
