@@ -272,7 +272,7 @@
 						<div id='slidesWrapper'>
 							<div class='slideElement'>
 
-								<a tabindex='-1' id='a1' href='JS-analyser/JS-analyser.html'>JS-analyser</a>
+								<a tabindex='-1' id='a1' href='JS-analyser/JS-analyser.php'>JS-analyser</a>
 								<br>
 								<br>
 								<a tabindex='-1' id='a1' href='http://localhost/lab/Issue-6898/Issue-6898.html'>Issue#6898</a> 
