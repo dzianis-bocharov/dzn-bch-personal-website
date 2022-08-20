@@ -9,18 +9,18 @@ constructor(item, userConfig) {
 
 const config = this.config = new Config(userConfig);//двойной знак равно
 
-if (existingChart) {
+if (existingChart) {//выражение в виде нескольких строк
     throw new Error(
         'Canvas is already in use. Chart with ID \'' + existingChart.id + '\'' +
         ' must be destroyed before the canvas can be reused.'
     );
-    }
+}
 
-if (me.attached) {
+if (me.attached) {//выражение в виде нескольких строк
     me.update();
 }
 
-if (!context || !canvas) {
+if (!context || !canvas) {//выражение в виде нескольких строк
     console.error("Failed to create chart: can't acquire context from the given item");
     return;
 }
@@ -149,7 +149,7 @@ instances[me.id] =
     animator.listen(me, 'complete', onAnimationsComplete);
     animator.listen(me, 'progress', onAnimationProgress);
     me._initialize();
-     if (me.attached) {
+    if (me.attached) {
        me.update();//закладка17
     }
         
