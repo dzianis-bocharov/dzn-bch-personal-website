@@ -1,5 +1,102 @@
 constructor(item, userConfig) {
 
+
+
+
+
+//----------проблемные случаи-------------------------------------------------------------------------
+{
+
+const config = this.config = new Config(userConfig);//двойной знак равно
+
+if (existingChart) {
+    throw new Error(
+        'Canvas is already in use. Chart with ID \'' + existingChart.id + '\'' +
+        ' must be destroyed before the canvas can be reused.'
+    );
+    }
+
+if (me.attached) {
+    me.update();
+}
+
+if (!context || !canvas) {
+    console.error("Failed to create chart: can't acquire context from the given item");
+    return;
+}
+
+animator.listen(me, 'complete', onAnimationsComplete);
+
+me._initialize();
+
+this._doResize = debounce(() => this.update('resize'), options.resizeDelay || 0);
+
+this.platform = new (config.platform || _detectPlatform(initialCanvas))();
+
+const canvas = context && context.canvas;
+
+}
+//----------правая сторона----------------------------------------------------------------------------
+{
+
+//this / 1 слово || слово + точка
+= this;
+= this.aspectRatio;
+
+//одно слово / внутренние элементы / сопоставить с массивом $internal_elements
+= context;
+= canvas;
+= width;
+= height;
+= options;
+= me;
+
+//new
+= new PluginService();
+
+//внешние функции
+= getCanvas(item);
+= getChart(initialCanvas);
+= uid();
+
+
+//слово с точкой
+= config.createResolver(config.chartOptionScopes(), me.getContext());
+= me.platform.acquireContext(initialCanvas, options.aspectRatio);
+
+//квадратные скобки с пустотой
+= [];
+
+//undefined
+= undefined;
+
+//фигурные скобки
+= {};
+
+//false
+= false;
+        
+}
+//----------левая сторона-----------------------------------------------------------------------------
+{
+
+//const
+const me =
+
+//this
+this.any_word = 
+this.$proxies = 
+this._metasets =
+
+//слово с квадратной скобкой
+instances[me.id] =
+        
+}
+
+
+
+
+
 //----------начальный вариант-------------------------------------------------------------------------
 {
     const me = this;
@@ -57,99 +154,4 @@ constructor(item, userConfig) {
     }
         
 }
-//----------левая сторона-----------------------------------------------------------------------------
-{
-
-//const
-const me =
-
-//this
-this.any_word = 
-this.$proxies = 
-this._metasets =
-
-//слово с квадратной скобкой
-instances[me.id] =
-        
-}
-//----------правая сторона----------------------------------------------------------------------------
-{
-
-//this
-= this;
-= this.aspectRatio;
-
-//одно слово / внутренние элементы / сопоставить с массивом $internal_elements
-= context;
-= canvas;
-= width;
-= height;
-= options;
-= me;
-
-//new
-= new PluginService();
-
-//внешние функции
-= getCanvas(item);
-= getChart(initialCanvas);
-= uid();
-
-= config.createResolver(config.chartOptionScopes(), me.getContext());
-= me.platform.acquireContext(initialCanvas, options.aspectRatio);
-= context && context.canvas;
-= canvas && canvas.height;
-= canvas && canvas.width;
-
-
-//квадратные скобки с пустотой
-= [];
-
-//undefined
-= undefined;
-
-//фигурные скобки
-= {};
-
-//false
-= false;
-
-        
-}
-//----------проблемные случаи-------------------------------------------------------------------------
-{
-
-const config = this.config = new Config(userConfig);//двойной знак равно
-
-if (existingChart) {
-    throw new Error(
-        'Canvas is already in use. Chart with ID \'' + existingChart.id + '\'' +
-        ' must be destroyed before the canvas can be reused.'
-    );
-    }
-
-if (me.attached) {
-    me.update();
-}
-
-if (!context || !canvas) {
-    console.error("Failed to create chart: can't acquire context from the given item");
-    return;
-}
-
-animator.listen(me, 'complete', onAnimationsComplete);
-
-me._initialize();
-
-this._doResize = debounce(() => this.update('resize'), options.resizeDelay || 0);
-
-this.platform = new (config.platform || _detectPlatform(initialCanvas))();
-  
-}
-//----------заметки-----------------------------------------------------------------------------------
-{    
-//заметка#1
-}
-//----------------------------------------------------------------------------------------------------
-
 }
