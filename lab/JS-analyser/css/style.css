@@ -100,6 +100,11 @@ div.div-call-stack, div.div-file-code, div.div-element-code, div.div-element-sch
   padding: 5px;
   font-size: 16px;
 }
+div.div-file-code, div.div-element-code div.div-call-stack{
+  overflow-x: hidden;
+  word-wrap:break-word;
+}
+
 #switch {
   position: relative;
   display: inline-block;
