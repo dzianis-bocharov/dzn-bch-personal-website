@@ -209,8 +209,6 @@
 
         <script>
             $(document).ready(function(){
-
-
                     $.ajax({
                         type: "GET",
                         url: "IP-client/IP-client.php",
@@ -219,11 +217,6 @@
                             $('#ipClientSpan').html(data);
                         }
                     });
-
-
-
-
-
             });
         </script>
 
