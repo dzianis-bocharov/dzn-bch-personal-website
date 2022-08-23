@@ -7,28 +7,6 @@ body {
     color: white;    
     position: relative;
 }
-/* button, input[type='submit'] { 
-  border-radius: 5px;
-} */
-/* .border-radius-all { 
-  border-radius: 5px;
-} 
-.border-radius-left {
-  border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px;
-}
-.border-radius-right {
-  border-top-right-radius: 5px;
-  border-bottom-right-radius: 5px;
-}
-.border-radius-up {
-  border-top-left-radius: 5px;
-  border-top-right-radius: 5px;
-} 
-.border-radius-bottom {
-  border-bottom-left-radius: 5px;
-  border-bottom-right-radius: 5px;
-}  */
 div#mainContainer {
     width: 1140px;
     margin-left: auto;
@@ -75,8 +53,6 @@ div#ctrlWhiteFrame1 {
   height: 26px;
   font-size: 14px;
   border: 1px solid white;
-  /* border-top-left-radius: 5px;
-  border-bottom-left-radius: 5px; */
 }
 #file-btn1, #file-btn2, #file-btn3 {
   width: 50px;
@@ -91,14 +67,21 @@ div#jsFilesUpload {
   margin-top: 10px;
   border: 2px white solid;
 }
-/* div#result {
-
-} */
 div.div-call-stack, div.div-file-code, div.div-element-code, div.div-element-scheme {
-  overflow-y: auto;
-  word-wrap: break-word;  
   padding: 5px;
   font-size: 16px;
+}
+div.div-file-code, div.div-element-code div.div-call-stack{
+  overflow-y: auto;
+  overflow-x:hidden;
+  word-wrap:break-word;
+}
+pre {
+  white-space: pre-wrap;
+}
+div.div-file-code {
+  text-indent: -45px;
+  padding-left: 45px;
 }
 #switch {
   position: relative;
@@ -196,7 +179,6 @@ div#ierarchyScheme {
   border: white solid 2px;
   background-color: grey;
   position: relative;
-
 }
 .largeWidthIerarchyScheme {
   padding: 10px 5px 50px 5px;
@@ -214,7 +196,7 @@ div#ierarchyScheme {
 .div-result {
   width: 100%;
   height: 100%;
-  overflow: auto;
+  overflow-y: auto;
 }
 .copyText{
   background-color: LightSeaGreen; 
@@ -270,36 +252,27 @@ span.sector-label {
   display: inline-block;
 }
 canvas.smallSizeCanvas {
-  /* border: 2px black solid; */
-  /* position: absolute; */
   top: 0px;
   left: 0px;
-  /* height: 3539px; */
   width: 680px;
   box-sizing: border-box;
 }
-/* canvas.largeSizeCanvas {
-} */
 button {
   border-style:none;
 }
-/* 
-body, html {
-  height: 100%;
-} */
+
 /*----------Error / Window------------------------------------------------------------------------------------------------*/
+
 #error_box {
   position: fixed;
   width: 100%;
   height: 100vh;
   z-index: 1;
-  /* background: rgba(0, 128, 128, 0.7); */
 }
 .error_container {
   position: relative;
   width: 100%;
   height: 100vh;
-  /* z-index: 1; */
   background: rgba(0, 128, 128, 0.7);
 }
 #error_window {
@@ -313,7 +286,6 @@ body, html {
   left: calc(50% - 250px);
   top: calc(50% - 150px);
   padding-top: 45px;
-  /* border-radius: 7px; */
 }
 .error_window_normal {
   display: none;

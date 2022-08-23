@@ -209,8 +209,6 @@
 
         <script>
             $(document).ready(function(){
-
-
                     $.ajax({
                         type: "GET",
                         url: "IP-client/IP-client.php",
@@ -219,11 +217,6 @@
                             $('#ipClientSpan').html(data);
                         }
                     });
-
-
-
-
-
             });
         </script>
 
@@ -272,7 +265,7 @@
 						<div id='slidesWrapper'>
 							<div class='slideElement'>
 
-								<a tabindex='-1' id='a1' href='JS-analyser/JS-analyser.html'>JS-analyser</a>
+								<a tabindex='-1' id='a1' href='JS-analyser/JS-analyser.php'>JS-analyser</a>
 								<br>
 								<br>
 								<a tabindex='-1' id='a1' href='http://localhost/lab/Issue-6898/Issue-6898.html'>Issue#6898</a> 
@@ -293,7 +286,7 @@
 								<a tabindex='-1' id='a1' href='https://www.google.com/'>Управляемый квадрат</a>
 							</div>
 							<div class='slideElement'>
-								<a tabindex='-1' id='a1' href='https://www.google.com/'>Тест#1</a>
+								<a tabindex='-1' id='a1' href='PHP/Test123.php'>Тест#1</a>
 							</div> 
 						</div>
 					</div>

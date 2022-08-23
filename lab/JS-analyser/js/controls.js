@@ -1,6 +1,6 @@
-import {canvas_blur_fix} from './canvas-blur-fix.js'; 
-import {file_code_tab} from './file-code-tab.js'; 
-import {call_stack_tab} from './call-stack-tab.js'; 
+import {canvas_blur_fix} from './canvas-blur-fix.js';
+import {file_code_tab} from './file-code-tab.js';
+import {call_stack_tab} from './call-stack-tab.js';
 import {error_window_open, error_window_close} from './error-window.js';
 
 function controls() {
@@ -10,6 +10,23 @@ function controls() {
     var ctx = canvas_blur_fix(document.querySelector('#mainCanvas'));
     ctx.font = "16px serif";
     ctx.fillText("...", 5, 18);
+
+//----------начальное анализатора / номер нажатой вкладки------------------------------------------------------------------
+
+    const tabs_state = {
+        position: 1
+    };
+
+
+    //удалить
+    // const itemInfo = {
+    //     position: {current: 0, min: 0, max: elements.length - 1}
+    //     ,
+    //     offset: 0
+    //     ,
+    //     update: function(value) {this.position.current += value;this.offset -= value}
+    // };
+
 
 //----------прикрепление скриптов к кнопкам---------------------------------------------------------------------------------
 
@@ -24,12 +41,12 @@ function controls() {
             document.getElementById('file-name1').value = '...';
         }
     });
-   
+
      $('.input-file-btn').on('click', (event) => {
         const btnInputId = event.target.id
         const inputFileId = '#file' + btnInputId.substring(btnInputId.length-1);
-        $(inputFileId).trigger('click'); 
-        const inputFileName = '#file-name' + btnInputId.substring(btnInputId.length-1) 
+        $(inputFileId).trigger('click');
+        const inputFileName = '#file-name' + btnInputId.substring(btnInputId.length-1)
         $(inputFileId).on('change', function () {
             const fileName = $(this)[0].files[0].name;
             $(inputFileName).val(fileName);
@@ -40,6 +57,7 @@ function controls() {
         event.preventDefault();
         document.getElementById('file1').value = '';
         document.getElementById('file2').value = '';
+        $('.div-file-code').html('...');
         $('.div-call-stack').html('...');
         $('.fileNames').val('...');
         $('#error_message').html('');
@@ -53,7 +71,7 @@ function controls() {
         const z = window.devicePixelRatio;
         ctx.scale(z, z);
         $('.wideDiv').removeClass('btn-scroll-yes').addClass('btn-scroll-no');
-        ctx.clearRect(0, 0, ctx.canvas.width,  ctx.canvas.height);      
+        ctx.clearRect(0, 0, ctx.canvas.width,  ctx.canvas.height);
         $('.tabs-ierarchy')[0].click();
         var ctx = canvas_blur_fix(document.querySelector('#mainCanvas'));
         ctx.font = "16px serif";
@@ -70,7 +88,7 @@ function controls() {
             $('#expandIerarchyScheme').html('Развернуть на<br> ширину окна');
         };
     })
-
+    
     $('.tabs-ierarchy').on('click', (e) => {
         let tabs = $('.tabs-ierarchy');
         let divsResult = $('.div-result');//
@@ -85,6 +103,7 @@ function controls() {
                 if($(divsResult[i]).hasClass('div-result-hide')){
                     $(divsResult[i]).removeClass('div-result-hide');
                 };
+                tabs_state.position = i+1;
             }
             else{
                 if(!$(tabs[i]).hasClass('tab-ierarchyScheme-notmal')){
@@ -97,9 +116,20 @@ function controls() {
                     $(divsResult[i]).addClass('div-result-hide');
                 };
             }
+            if(i == 0) {
+                $('.div-main-canvas').focus();
+            }else if(i == 1) {
+                $('.div-file-code').focus();
+            }else if(i == 2) {
+                $('.div-element-scheme').focus();
+            }else if(i == 3){
+                $('.div-element-code').focus();
+            }else if(i == 4){
+                $('.div-call-stack').focus();
+            };
         };
     });
-   
+
 //----------запуск----------------------------------------------------------------------------------------------------------
 
     $('#launch').on('click', (event)=>{
@@ -120,7 +150,7 @@ function controls() {
         // else if(!$('#test1').is(':checked') && !$('#file2')[0].files[0]) {
         //     error_window_open('<p>Не выбран файл JavaScript!</p>');
         // }
-        // else 
+        // else
         {
 
 //----------схема для файла-------------------------------------------------------------------------------------------------
@@ -152,12 +182,40 @@ function controls() {
 
             file_code_tab();
             call_stack_tab();
-    
+
 //--------------------------------------------------------------------------------------------------------------------------
 
         }
     })
-    
+
+
+
+
+
+    $('.copyText').on('click', (event)=>{
+        event.preventDefault();
+       
+        //tabs_state.position
+
+        // alert('New York City');
+
+
+        var file_code = $('#file-code').text();
+
+
+
+        function copyToClipboard(text) {
+            var dummy = document.createElement("textarea");
+            document.body.appendChild(dummy);
+            dummy.value = text;
+            dummy.select();
+            document.execCommand("copy");
+            document.body.removeChild(dummy);
+        }
+        copyToClipboard(file_code);
+    });
+
+
     $('#button_error_ok').on('click', () => {
         error_window_close();
     });
@@ -165,54 +223,32 @@ function controls() {
 //----------горячие кнопки----------
 
     document.addEventListener ("keydown", function (zEvent) {
-        // if (zEvent.ctrlKey  &&  zEvent.altKey  &&  zEvent.key === "1") {
         if (zEvent.key === "1") {
-
-
-            //код файла
-
             $('.tabs-ierarchy')[0].click();
-        }
-    });
-
-    document.addEventListener ("keydown", function (zEvent) {
+        };
         if (zEvent.key === "2") {
             $('.tabs-ierarchy')[1].click();
-        }
-    });
-
-    document.addEventListener ("keydown", function (zEvent) {
+        };
         if (zEvent.key === "3") {
             $('.tabs-ierarchy')[2].click();
-        }
-    });
-
-    document.addEventListener ("keydown", function (zEvent) {
+        };
         if (zEvent.key === "4") {
             $('.tabs-ierarchy')[3].click();
-        }
-    });
-
-    document.addEventListener ("keydown", function (zEvent) {
+        };
         if (zEvent.key === "5") {
             $('.tabs-ierarchy')[4].click();
-        }
-    });
-
-    
-    document.addEventListener ("keydown", function (zEvent) {
-        // if (zEvent.keyCode === 70) {
-        if (zEvent.key === 'f') {
-                $('#expandIerarchyScheme').click();
-        }
-    });
-
-    document.addEventListener ("keydown", function (zEvent) {
+        };
+        if (zEvent.code === 'KeyF') {
+            $('#expandIerarchyScheme').click();
+        };
         if (zEvent.key === ' ') {
             $('#launch').click();
-        }
+        };
+        if (zEvent.code === 'KeyC') {
+            $('.copyText').click();
+        };
     });
-
+     
 
 };
 
