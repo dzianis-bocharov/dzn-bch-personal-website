@@ -79,6 +79,19 @@ div.div-file-code, div.div-element-code div.div-call-stack{
 pre {
   white-space: pre-wrap;
 }
+code {
+
+  font-family: ui-monospace, "Cascadia Mono", "Segoe UI Mono", "Liberation Mono", Menlo, Monaco, Consolas, monospace;
+  font-size: 14px;
+  font-style: normal;
+  font-variant-caps: normal;
+  font-variant-east-asian: normal;
+  font-variant-ligatures: normal;
+  font-variant-numeric: normal;
+  font-weight: 400;
+  
+
+}
 div.div-file-code {
   text-indent: -45px;
   padding-left: 45px;
