@@ -248,6 +248,7 @@ function controls() {
             $('.copyText').click();
         };
     });
+     
 
 };
 
