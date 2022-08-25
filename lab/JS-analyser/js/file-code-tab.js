@@ -13,6 +13,6 @@ function file_code_tab() {
             $('.file-code-inside').html(response);
           }
       });
-  };
+};
   
-  export {file_code_tab};
+export {file_code_tab};

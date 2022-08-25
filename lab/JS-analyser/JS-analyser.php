@@ -92,7 +92,7 @@
                     <div id='tab-callStack' class='tabs-ierarchy tab-ierarchyScheme-normal border-radius-up'>Cтек вызова</div>
                 </div>
                 <div id='ierarchyScheme' class="border-radius-bottom">
-                    <div tabindex="0" class="div-main-canvas div-result">
+                    <div tabindex="0" class="div-main-canvas div-result tab-front">
                         <canvas id='mainCanvas' class='smallSizeCanvas'></canvas>
                     </div>
 
@@ -100,7 +100,7 @@
 <!---------------------------------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------------------------------->
 
-                    <div id='file-code' tabindex="0" class="div-file-code div-result div-result-hide">
+                    <div id='file-code' tabindex="0" class="div-file-code div-result tab-back">
 
                         <div class='number-of-lines-inside div-file-code-inside unselectable'>...</div>    
 
@@ -112,9 +112,9 @@
 <!---------------------------------------------------------------------------------------------------->
 <!---------------------------------------------------------------------------------------------------->
 
-                    <div tabindex="0" class="div-element-scheme div-result div-result-hide">схема для элемента</div>
-                    <div id='element-code' tabindex="0" class="div-element-code div-result div-result-hide">код элемента</div>
-                    <div id='call-stack' tabindex="0" id='div-call-stack' class="div-call-stack div-result div-result-hide">...</div>
+                    <div tabindex="0" class="div-element-scheme div-result tab-back">схема для элемента</div>
+                    <div id='element-code' tabindex="0" class="div-element-code div-result tab-back">код элемента</div>
+                    <div id='call-stack' tabindex="0" class="div-call-stack div-result tab-back">...</div>
                 </div>
             </div>
         </div>

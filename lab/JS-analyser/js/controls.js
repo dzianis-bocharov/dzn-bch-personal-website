@@ -80,16 +80,28 @@ function controls() {
         let divsResult = $('.div-result');//
         for(let i = tabs.length - 1; i>-1;i--){
             if(tabs[i]==e.target){
-                if(!$(tabs[i]).hasClass('ttab-ierarchyScheme-active')){
+                if(!$(tabs[i]).hasClass('tab-ierarchyScheme-active')){
                         $(tabs[i]).addClass('tab-ierarchyScheme-active');
                 };
                 if($(tabs[i]).hasClass("tab-ierarchyScheme-normal")){
                         $(tabs[i]).removeClass("tab-ierarchyScheme-normal");
                 }
-                if($(divsResult[i]).hasClass('div-result-hide')){
-                    $(divsResult[i]).removeClass('div-result-hide');
+                if($(divsResult[i]).hasClass('tab-back')){
+                    $(divsResult[i]).removeClass('tab-back');
+                    $(divsResult[i]).addClass('tab-forward');
                 };
                 tabs_state.position = i+1;
+                if(i == 0) {
+                    $('.div-main-canvas').focus();
+                }else if(i == 1) {
+                    $('.div-file-code').focus();
+                }else if(i == 2) {
+                    $('.div-element-scheme').focus();
+                }else if(i == 3){
+                    $('.div-element-code').focus();
+                }else if(i == 4){
+                    $('.div-call-stack').focus();
+                };
             }
             else{
                 if(!$(tabs[i]).hasClass('tab-ierarchyScheme-notmal')){
@@ -98,21 +110,11 @@ function controls() {
                 if($(tabs[i]).hasClass("tab-ierarchyScheme-active")){
                         $(tabs[i]).removeClass("tab-ierarchyScheme-active");
                     }
-                if(!$(divsResult[i]).hasClass('div-result-hide')){
-                    $(divsResult[i]).addClass('div-result-hide');
+                if(!$(divsResult[i]).hasClass('tab-back')){
+                    $(divsResult[i]).removeClass('tab-forward');
+                    $(divsResult[i]).addClass('tab-back');
                 };
             }
-            if(i == 0) {
-                $('.div-main-canvas').focus();
-            }else if(i == 1) {
-                $('.div-file-code').focus();
-            }else if(i == 2) {
-                $('.div-element-scheme').focus();
-            }else if(i == 3){
-                $('.div-element-code').focus();
-            }else if(i == 4){
-                $('.div-call-stack').focus();
-            };
         };
     });
 
