@@ -1,6 +1,6 @@
 function file_code_tab() {
-    $('.div-file-code').html('');
-      // var file_data = new FormData();
+    $('.number-of-lines-inside').html('');
+      // var file_data = new FormData();//ВКЛЮЧИТЬ!!!
       // var file_js = $('#file2')[0].files[0];
       // file_data.append('file_js',file_js);
       $.ajax({
@@ -10,8 +10,9 @@ function file_code_tab() {
           // contentType: false,
           // processData: false,
           success: function(response){
-            $('.div-file-code').append(response);
+            $('.file-code-inside').html(response);
           }
       });
   };
+  
   export {file_code_tab};

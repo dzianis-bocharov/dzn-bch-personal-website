@@ -31,7 +31,7 @@
                 </div>
             </div>
         </div>
-
+        
 <!----------------------------------------------------------------------------------------------------------------------->
 
         <div id='mainContainer'>
@@ -95,9 +95,25 @@
                     <div tabindex="0" class="div-main-canvas div-result">
                         <canvas id='mainCanvas' class='smallSizeCanvas'></canvas>
                     </div>
-                    <div id='file-code' tabindex="0" class="div-file-code div-result div-result-hide">...</div>
-                    <div tabindex="0" class="div-element-scheme div-result div-result-hide">...</div>
-                    <div id='element-code' tabindex="0" class="div-element-code div-result div-result-hide">...</div>
+
+<!---------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------->
+
+                    <div id='file-code' tabindex="0" class="div-file-code div-result div-result-hide">
+
+                        <div class='number-of-lines-inside div-file-code-inside unselectable'>...</div>    
+
+                        <div class='file-code-inside div-file-code-inside'></div>    
+
+                    </div>
+
+<!---------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------->
+<!---------------------------------------------------------------------------------------------------->
+
+                    <div tabindex="0" class="div-element-scheme div-result div-result-hide">схема для элемента</div>
+                    <div id='element-code' tabindex="0" class="div-element-code div-result div-result-hide">код элемента</div>
                     <div id='call-stack' tabindex="0" id='div-call-stack' class="div-call-stack div-result div-result-hide">...</div>
                 </div>
             </div>

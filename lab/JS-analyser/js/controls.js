@@ -17,17 +17,6 @@ function controls() {
         position: 1
     };
 
-
-    //удалить
-    // const itemInfo = {
-    //     position: {current: 0, min: 0, max: elements.length - 1}
-    //     ,
-    //     offset: 0
-    //     ,
-    //     update: function(value) {this.position.current += value;this.offset -= value}
-    // };
-
-
 //----------прикрепление скриптов к кнопкам---------------------------------------------------------------------------------
 
     $('#switch').click(() => {
@@ -41,8 +30,7 @@ function controls() {
             document.getElementById('file-name1').value = '...';
         }
     });
-
-     $('.input-file-btn').on('click', (event) => {
+    $('.input-file-btn').on('click', (event) => {
         const btnInputId = event.target.id
         const inputFileId = '#file' + btnInputId.substring(btnInputId.length-1);
         $(inputFileId).trigger('click');
@@ -52,12 +40,12 @@ function controls() {
             $(inputFileName).val(fileName);
         });
     });
-
     $('#reset').on('click', (event) => {
         event.preventDefault();
         document.getElementById('file1').value = '';
         document.getElementById('file2').value = '';
-        $('.div-file-code').html('...');
+        $('.number-of-lines-inside').html('...');
+        $('.file-code-inside').html('');
         $('.div-call-stack').html('...');
         $('.fileNames').val('...');
         $('#error_message').html('');
@@ -77,7 +65,6 @@ function controls() {
         ctx.font = "16px serif";
         ctx.fillText("...", 5, 18);
     })
-
     $('#expandIerarchyScheme').on('click', ()=>{
         if($('#result').hasClass('normalWidthIerarchyScheme')) {
             $('#result').removeClass('normalWidthIerarchyScheme').addClass('largeWidthIerarchyScheme');
@@ -88,7 +75,6 @@ function controls() {
             $('#expandIerarchyScheme').html('Развернуть на<br> ширину окна');
         };
     })
-    
     $('.tabs-ierarchy').on('click', (e) => {
         let tabs = $('.tabs-ierarchy');
         let divsResult = $('.div-result');//
@@ -188,22 +174,9 @@ function controls() {
         }
     })
 
-
-
-
-
     $('.copyText').on('click', (event)=>{
         event.preventDefault();
-       
-        //tabs_state.position
-
-        // alert('New York City');
-
-
-        var file_code = $('#file-code').text();
-
-
-
+        var file_code = $('.file-code-inside').text();
         function copyToClipboard(text) {
             var dummy = document.createElement("textarea");
             document.body.appendChild(dummy);
@@ -213,6 +186,7 @@ function controls() {
             document.body.removeChild(dummy);
         }
         copyToClipboard(file_code);
+        $('.tabs-ierarchy')[tabs_state.position-1].click();
     });
 
 
@@ -244,11 +218,28 @@ function controls() {
         if (zEvent.key === ' ') {
             $('#launch').click();
         };
-        if (zEvent.code === 'KeyC') {
+        if (!zEvent.ctrlKey && zEvent.code === 'KeyC') {
             $('.copyText').click();
         };
+        if (zEvent.code === 'KeyR') {
+            $('#reset').click();
+        };
     });
-     
+
+//----------переключение вкладок с помощью знаков '<' и '>'----------
+
+    document.addEventListener ("keydown", function (zEvent) {
+        if (zEvent.ctrlKey && zEvent.code === "Comma") {
+            if(tabs_state.position>1){
+                $('.tabs-ierarchy')[tabs_state.position-2].click();
+            }
+        } else if (zEvent.ctrlKey && zEvent.code === "Period") {
+            if(tabs_state.position<5){
+                $('.tabs-ierarchy')[tabs_state.position].click();
+            }
+        };
+
+    });
 
 };
 
