@@ -67,8 +67,11 @@ div#jsFilesUpload {
   margin-top: 10px;
   border: 2px white solid;
 }
-div.div-call-stack, div.div-file-code, div.div-element-code, div.div-element-scheme {
+div.div-call-stack,  div.div-element-code, div.div-element-scheme {
   padding: 5px;
+  font-size: 16px;
+}
+div.div-file-code {
   font-size: 16px;
 }
 div.div-file-code, div.div-element-code div.div-call-stack{
@@ -76,8 +79,32 @@ div.div-file-code, div.div-element-code div.div-call-stack{
   overflow-x:hidden;
   word-wrap:break-word;
 }
+
+
+div.div-file-code {
+  position: relative;
+}
+div.number-of-lines-inside {
+  position: absolute;
+  padding: 5px;
+}
+div.file-code-inside {
+  position: absolute;
+  /* padding-left: 40px;
+  padding-right: 5px;
+  text-indent: -35px; */
+  /* text-indent: 35px;  */
+}
+
+
 pre {
   white-space: pre-wrap;
+  margin-left: 5px;
+  text-indent: -50px;
+  padding-top: 5px; 
+  padding-left: 5px; 
+  padding-right: 5px; 
+  padding-left: 25px;
 }
 code {
 
@@ -92,10 +119,10 @@ code {
   
 
 }
-div.div-file-code {
+/* div.div-file-code {
   text-indent: -45px;
-  padding-left: 45px;
-}
+  padding-left: 50px;
+} */
 #switch {
   position: relative;
   display: inline-block;
