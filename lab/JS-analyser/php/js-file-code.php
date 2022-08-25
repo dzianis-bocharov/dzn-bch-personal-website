@@ -1,5 +1,5 @@
 <?php
-    echo '<pre><code>';
+    echo '<code>';
     $file = fopen("c:\Users\dzian\dzn-bch-personal-website\lab\JS-analyser\js\js-files-examples\chart.js", "r");
         $i=0;
         while(! feof($file)) {
