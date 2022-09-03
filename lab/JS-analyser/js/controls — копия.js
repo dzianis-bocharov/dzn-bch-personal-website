@@ -10,10 +10,10 @@ function controls(main_canvas_id) {
 
     var ctx = canvas_blur_fix(document.querySelector('#mainCanvas'));
     ctx.clearRect(0, 0, ctx.canvas.width,  ctx.canvas.height);
-    $('#mainCanvas').attr('height',$('.div-main-canvas').height()-20);
-    $('#mainCanvas').css('height',$('.div-main-canvas').height()-20);
-    $('#mainCanvas').attr('height','20');
-    $('#mainCanvas').css('height','20');
+    // $('#mainCanvas').attr('height',$('.div-main-canvas').height()-20);
+    // $('#mainCanvas').css('height',$('.div-main-canvas').height()-20);
+    // $('#mainCanvas').attr('height','20');
+    // $('#mainCanvas').css('height','20');
     ctx.font = "18px serif";
     ctx.fillText("...", 5, 18);
 
