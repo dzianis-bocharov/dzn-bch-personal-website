@@ -116,6 +116,7 @@ code, .file-code-inside {
   font-variant-ligatures: normal;
   font-variant-numeric: normal;
   font-weight: 400;
+  padding-bottom: 10px;
 }
 /*УДАЛИТЬ!!!*/
 /* div.div-file-code {

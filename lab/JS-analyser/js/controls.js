@@ -5,19 +5,40 @@ import {file_ierarchy_scheme_tab} from './file-ierarchy-scheme-tab.js';
 import {element_code_tab } from './element-code-tab.js';
 import {call_stack_tab} from './call-stack-tab.js';
 import {error_window_open, error_window_close} from './error-window.js';
-import {js_file_data} from './js-file-data.js';
+//---СТЕРЕТЬ!---
+// import {js_file_data} from './js-file-data.js';
 import {no_small_screen_error_window_for_unload, no_small_screen_error_window_for_resize} from './no-small-screen-error-window.js';
-import { file_code_tab } from './file-code-tab.js';
+import {file_code_tab } from './file-code-tab.js';
+
+//----------выделение текста внутри div---------------------------------------------------------------
+
+function selectText(containerid) {
+    if (document.selection) { // IE
+        var range = document.body.createTextRange();
+        range.moveToElementText(document.getElementById(containerid));
+        range.select();
+    } else if (window.getSelection) {
+        var range = document.createRange();
+        range.selectNode(document.getElementById(containerid));
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+    }
+}
+
+//----------главное состояние-------------------------------------------------------------------------
 
 
+const main_state = {
 
-const element_state = {
-    key1: '',
-    key2: '',
-    key3: ''
+    tab_position: 1,
+
+    file_name : '',
+    all_lines : '',
+    list_of_functions : '',
+    call_stack : '',
+    current_element : ''
+    
 };
-
-
 
 // import {css_element_check_tool} from './css-element-check-tool.js';
 
@@ -25,8 +46,6 @@ function controls(main_canvas_id) {
     
     no_small_screen_error_window_for_unload();
     no_small_screen_error_window_for_resize();
-
-// css_element_check_tool();
 
 //----------схема для файла / начальное состояние / рисование трех точек----------------------------------------------------
 
@@ -39,11 +58,6 @@ function controls(main_canvas_id) {
     ctx.font = "18px serif";
     ctx.fillText("...", 5, 18);
 
-//----------начальное анализатора / номер нажатой вкладки------------------------------------------------------------------
-
-    const tabs_state = {
-        position: 1
-    };
 
 //----------прикрепление скриптов к кнопкам---------------------------------------------------------------------------------
 
@@ -70,6 +84,7 @@ function controls(main_canvas_id) {
     });
     function reset(event){
         event.preventDefault();
+        selectText('h1');
         $('.div-result').scrollTop(0);
         document.getElementById('file1').value = '';
         document.getElementById('file2').value = '';
@@ -126,7 +141,7 @@ function controls(main_canvas_id) {
                     $(divsResult[i]).removeClass('tab-back');
                     $(divsResult[i]).addClass('tab-forward');
                 };
-                tabs_state.position = i+1;
+                main_state.tab_position = i+1;
                 if(i == 0) {
                     $('.div-main-canvas').focus();
                 }else if(i == 1) {
@@ -154,7 +169,7 @@ function controls(main_canvas_id) {
         };
     });
 
-//----------запуск----------------------------------------------------------------------------------------------------------
+//----------запуск------------------------------------------------------------------------------------
 
     $('#launch').on('click', (event)=>{
         reset(event);
@@ -204,32 +219,30 @@ function controls(main_canvas_id) {
 
 
         function extract_data() {
-
-            $('.file-numbers-of-lines-inside').html('');
-        
-            //ВКЛЮЧИТЬ!!!
+         $('.file-numbers-of-lines-inside').html('');
+            //---ВКЛЮЧИТЬ!---
             // var file_data = new FormData();
             // var file_js = $('#file2')[0].files[0];
             // file_data.append('file_js',file_js);
             $.ajax({
                 url: 'php/js-file-data.php',
                 type: 'POST',
-                //ВКЛЮЧИТЬ!!!
+                //---ВКЛЮЧИТЬ!---
                 // data: file_data,
                 // contentType: false,
                 // processData: false,
                 success: function(response){
-                  
-
                     file_code_tab(response);
+
+                    element_code_tab();
+                    element_code_tab();
+                    call_stack_tab();
+
+                    file_ierarchy_scheme_tab(ctx, main_canvas_id);
 
                 },
                 dataType: "json"
             });
-        
-        // $('.file-code-inside').html(extracted_data);
-        
-        
         };
 
 
@@ -239,13 +252,9 @@ function controls(main_canvas_id) {
 //----------------------------------------------------------------------------------------------------            
 //----------------------------------------------------------------------------------------------------            
 
-            file_ierarchy_scheme_tab(ctx, main_canvas_id);
 
             extract_data();
-            
-            element_code_tab();
-            element_code_tab();
-            call_stack_tab();
+
 
         // }
     })
@@ -262,7 +271,7 @@ function controls(main_canvas_id) {
             document.body.removeChild(dummy);
         }
         copyToClipboard(file_code);
-        $('.tabs-ierarchy')[tabs_state.position-1].click();
+        $('.tabs-ierarchy')[main_state.tab_position-1].click();
     });
 
 
@@ -301,18 +310,28 @@ function controls(main_canvas_id) {
         if (zEvent.code === 'KeyR') {
             $('#reset').click();
         };
+
+
+
+        if (zEvent.ctrlKey && zEvent.code === 'KeyA') {
+            zEvent.preventDefault();
+            selectText('file-code-inside'); 
+        };
+
+
+
     });
 
 //----------переключение вкладок с помощью знаков '<' и '>'----------
 
     document.addEventListener ("keydown", function (zEvent) {
         if (zEvent.ctrlKey && zEvent.code === "Comma") {
-            if(tabs_state.position>1){
-                $('.tabs-ierarchy')[tabs_state.position-2].click();
+            if(main_state.tab_position>1){
+                $('.tabs-ierarchy')[main_state.tab_position-2].click();
             }
         } else if (zEvent.ctrlKey && zEvent.code === "Period") {
-            if(tabs_state.position<5){
-                $('.tabs-ierarchy')[tabs_state.position].click();
+            if(main_state.tab_position<5){
+                $('.tabs-ierarchy')[main_state.tab_position].click();
             }
         };
 

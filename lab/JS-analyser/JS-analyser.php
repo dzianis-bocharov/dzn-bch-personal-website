@@ -33,7 +33,7 @@
 <!----------main container----------------------------------------------------------------------------------------------->
 
         <div id='mainContainer'>
-            <h1 class = 'unselectable'>JS-analyser</h1>
+            <h1 id='h1' class = 'unselectable'>JS-analyser</h1>
             <br>
             <div id='controls-buttons' class="unselectable">
                 <div id='ctrlWhiteFrame1' class="border-radius-all">
@@ -95,7 +95,7 @@
                     </div>
                     <div id='file-code' tabindex="0" class="div-file-code div-result tab-back">
                         <div class='file-numbers-of-lines-inside div-file-code-inside unselectable'>...</div>    
-                        <div class='file-code-inside div-file-code-inside'></div>    
+                        <div id = 'file-code-inside' class='file-code-inside div-file-code-inside'></div>    
                     </div>
                     <div tabindex="0" class="div-element-scheme div-result tab-back">схема для элемента</div>
                     <div id='element-code' tabindex="0" class="div-element-code div-result tab-back">

@@ -1,5 +1,4 @@
- function file_code_tab(extracted_data) {
-    console.log(Object.keys(extracted_data['all_lines']).length);
+function file_code_tab(extracted_data) {
     let w = Object.keys(extracted_data['all_lines']).length;
     let code_of_file = '';
     for (let i = 0; i < w; i++) {
