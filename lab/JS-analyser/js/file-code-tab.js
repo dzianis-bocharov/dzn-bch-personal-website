@@ -1,18 +1,9 @@
-function file_code_tab() {
-    $('.number-of-lines-inside').html('');
-      // var file_data = new FormData();//ВКЛЮЧИТЬ!!!
-      // var file_js = $('#file2')[0].files[0];
-      // file_data.append('file_js',file_js);
-      $.ajax({
-          url: 'php/js-file-code.php',
-          type: 'POST',
-          // data: file_data,
-          // contentType: false,
-          // processData: false,
-          success: function(response){
-            $('.file-code-inside').html(response);
-          }
-      });
+function file_code_tab(extracted_data) {
+    let w = Object.keys(extracted_data['all_lines']).length;
+    let code_of_file = '';
+    for (let i = 0; i < w; i++) {
+        code_of_file = code_of_file + extracted_data['all_lines'][i];
+    }
+    $('.file-code-inside').html(code_of_file);
 };
-  
 export {file_code_tab};

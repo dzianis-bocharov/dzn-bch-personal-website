@@ -1,11 +1,3 @@
-<?php
-	session_start();
-	if (!isset($_SESSION['loggedin'])) {
-		header('Location: /lab/phplogin/index.html');
-		exit;
-	}
-?>
-
 <!DOCTYPE html>
 <html>
     
@@ -29,11 +21,13 @@
                 </div>
             </div>
         </div>
-        
-<!----------main container----------------------------------------------------------------------------------------------->
 
-        <div id='mainContainer'>
-            <h1 id='h1' class = 'unselectable'>JS-analyser</h1>
+
+
+<!----------------------------------------------------------------------------------------------------------------------->
+
+        <div id='mainContainer' class = 'unselectable'>
+            <h1 class = 'unselectable'>JS-analyser</h1>
             <br>
             <div id='controls-buttons' class="unselectable">
                 <div id='ctrlWhiteFrame1' class="border-radius-all">
@@ -55,8 +49,8 @@
                             <div class='wrapper'>
                                 <input type='file' id='file1'>
                                 <div id=''>
-                                <input tabindex="-1" type='text' id='file-name1' class = 'fileNames border-radius-left' value='...' readonly='readonly'>
-                                <input tabindex="-1" type='button' value='Файл' id='file-btn1' class='input-file-btn unselectable border-radius-right'>
+                                <input type='text' id='file-name1' class = 'fileNames border-radius-left' value='...' readonly='readonly'>
+                                <input type='button' value='Файл' id='file-btn1' class='input-file-btn unselectable border-radius-right'>
                                 </div> 
                             </div>
                             <br>
@@ -66,21 +60,21 @@
                         <div class='wrapper'>
                             <input type='file' id='file2'>
                             <div>
-                            <input tabindex="-1" type='text' id='file-name2' class = 'fileNames border-radius-left' value='...' readonly='readonly'>
-                            <input tabindex="-1" type='button' value='Файл' id='file-btn2' class='input-file-btn unselectable border-radius-right'>
+                            <input type='text' id='file-name2' class = 'fileNames border-radius-left' value='...' readonly='readonly'>
+                            <input type='button' value='Файл' id='file-btn2' class='input-file-btn unselectable border-radius-right'>
                             </div> 
                         </div>
                         <br>
-                        <input tabindex="-1" type='submit' id='launch' class='control-btn border-radius-all' value="ЗАПУСК"> 
-                        <button tabindex="-1" id='reset' class='control-btn unselectable border-radius-all'>Сброс</button>
+                        <input type='submit' id='launch' class='control-btn border-radius-all' value="ЗАПУСК"> 
+                        <button id='reset' class='control-btn unselectable border-radius-all'>Сброс</button>
                     </form>
                 </div>
-                <a tabindex="-1" id='a1' href='../MainPage.php'>Навигация /// Lab / Home</a>
+                <a id='a1' href='../MainPage.php'>Навигация /// Lab / Home</a>
             </div>
             <div id='result' class="normalWidthIerarchyScheme border-radius-all">
                 <span class='sector-label unselectable'>Иерархия функций в анализируемом скрипте</span>
-                <button tabindex="-1" class='copyText unselectable border-radius-all'>Копировать<br>текст</button>
-                <button tabindex="-1" class='wideDiv btn-scroll-no unselectable border-radius-all'  id='expandIerarchyScheme'>Развернуть на<br> ширину окна</button>
+                <button class='copyText unselectable border-radius-all'>Копировать<br>текст</button>
+                <button class='wideDiv btn-scroll-no unselectable border-radius-all'  id='expandIerarchyScheme'>Развернуть на<br> ширину окна</button>
                 <hr class="white-line-2">
                 <div>
                     <div id='tab-fileScheme' class='tabs-ierarchy tab-ierarchyScheme-active border-radius-up'>Схема для файла</div>
@@ -90,19 +84,13 @@
                     <div id='tab-callStack' class='tabs-ierarchy tab-ierarchyScheme-normal border-radius-up'>Cтек вызова</div>
                 </div>
                 <div id='ierarchyScheme' class="border-radius-bottom">
-                    <div tabindex="0" class="div-main-canvas div-result tab-front">
+                    <div class="div-main-canvas div-result">
                         <canvas id='mainCanvas' class='smallSizeCanvas'></canvas>
                     </div>
-                    <div id='file-code' tabindex="0" class="div-file-code div-result tab-back">
-                        <div class='file-numbers-of-lines-inside div-file-code-inside unselectable'>...</div>    
-                        <div id = 'file-code-inside' class='file-code-inside div-file-code-inside'></div>    
-                    </div>
-                    <div tabindex="0" class="div-element-scheme div-result tab-back">схема для элемента</div>
-                    <div id='element-code' tabindex="0" class="div-element-code div-result tab-back">
-                        <div class='element-numbers-of-lines-inside div-element-code-inside unselectable'>...</div>    
-                        <div class='element-code-inside div-element-code-inside'></div>    
-                    </div>
-                    <div id='call-stack' tabindex="0" class="div-call-stack div-result tab-back">...</div>
+                    <div class="div-file-code div-result div-result-hide">...</div>
+                    <div class="div-element-scheme div-result div-result-hide">...</div>
+                    <div class="div-element-code div-result div-result-hide">...</div>
+                    <div id='div-call-stack' class="div-call-stack div-result div-result-hide">...</div>
                 </div>
             </div>
         </div>
