@@ -5,7 +5,7 @@
    // $file_js = $_FILES['file_js'];//ВКЛЮЧИТЬ!!!
 
 
-    //$file_name = $file_js['name'];
+    //$file_name = $file_js['name']; //ВКЛЮЧИТЬ!!!
 
     $file_name ="chart.js";//УДАЛИТЬ!!!
 

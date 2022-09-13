@@ -3,8 +3,7 @@
         $all_elements = [];
 
         $all_lines = [];
-        $line_of_code = null;
-        $main_result = [];
+        $result = [];
 
         $curly_braces_indicator = 0;
         $number_of_line = 0;
@@ -14,13 +13,6 @@
         while(!feof($file)) {
             $number_of_line++;
             $line = fgets($file);
-
-            $line_of_code = "<pre><span class='unselectable'>".$number_of_line."</span>".'  '.$line.'</pre>';
-
-
-            array_push($all_lines,$line_of_code);
-
-
             $curly_braces_indicator = $curly_braces_indicator + preg_match_all("/{/",$line) - preg_match_all("/}/",$line);
 
 //----------class------------------------------------------------------------------------------------------------------
@@ -110,12 +102,8 @@
 
         // $result['all_lines'] = $all_lines;
         // $result['all_elements'] = $all_elements;
-        // $main_result = [123,$all_elements];
-        // $all_lines = [1,2,3];
-        $main_result[0] = $all_lines;
-        $main_result[1] = $all_elements;
-        return $main_result;
+        // return $result;
 
-        // return $all_elements;
+        return $all_elements;
     };
 ?>

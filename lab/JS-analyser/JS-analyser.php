@@ -1,7 +1,5 @@
 <?php
-	// We need to use sessions, so you should always start sessions using the below.
 	session_start();
-	// If the user is not logged in redirect to the login page... 
 	if (!isset($_SESSION['loggedin'])) {
 		header('Location: /lab/phplogin/index.html');
 		exit;
@@ -32,7 +30,7 @@
             </div>
         </div>
         
-<!----------------------------------------------------------------------------------------------------------------------->
+<!----------main container----------------------------------------------------------------------------------------------->
 
         <div id='mainContainer'>
             <h1 class = 'unselectable'>JS-analyser</h1>
@@ -95,25 +93,15 @@
                     <div tabindex="0" class="div-main-canvas div-result tab-front">
                         <canvas id='mainCanvas' class='smallSizeCanvas'></canvas>
                     </div>
-
-<!---------------------------------------------------------------------------------------------------->
-<!---------------------------------------------------------------------------------------------------->
-<!---------------------------------------------------------------------------------------------------->
-
                     <div id='file-code' tabindex="0" class="div-file-code div-result tab-back">
-
-                        <div class='number-of-lines-inside div-file-code-inside unselectable'>...</div>    
-
+                        <div class='file-numbers-of-lines-inside div-file-code-inside unselectable'>...</div>    
                         <div class='file-code-inside div-file-code-inside'></div>    
-
                     </div>
-
-<!---------------------------------------------------------------------------------------------------->
-<!---------------------------------------------------------------------------------------------------->
-<!---------------------------------------------------------------------------------------------------->
-
                     <div tabindex="0" class="div-element-scheme div-result tab-back">схема для элемента</div>
-                    <div id='element-code' tabindex="0" class="div-element-code div-result tab-back">код элемента</div>
+                    <div id='element-code' tabindex="0" class="div-element-code div-result tab-back">
+                        <div class='element-numbers-of-lines-inside div-element-code-inside unselectable'>...</div>    
+                        <div class='element-code-inside div-element-code-inside'></div>    
+                    </div>
                     <div id='call-stack' tabindex="0" class="div-call-stack div-result tab-back">...</div>
                 </div>
             </div>
