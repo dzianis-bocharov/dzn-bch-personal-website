@@ -12,6 +12,8 @@ import {file_code_tab } from './file-code-tab.js';
 
 //----------выделение текста внутри div---------------------------------------------------------------
 
+
+
 function selectText(containerid) {
     if (document.selection) { // IE
         var range = document.body.createTextRange();
@@ -27,17 +29,13 @@ function selectText(containerid) {
 
 //----------главное состояние-------------------------------------------------------------------------
 
-
 const main_state = {
-
     tab_position: 1,
-
     file_name : '',
     all_lines : '',
     list_of_functions : '',
     call_stack : '',
     current_element : ''
-    
 };
 
 // import {css_element_check_tool} from './css-element-check-tool.js';
@@ -84,6 +82,11 @@ function controls(main_canvas_id) {
     });
     function reset(event){
         event.preventDefault();
+        main_state.file_name = '';
+        main_state.all_lines = '';
+        main_state.list_of_functions = '';
+        main_state.call_stack = '';
+        main_state.current_element = '';
         selectText('h1');
         $('.div-result').scrollTop(0);
         document.getElementById('file1').value = '';
@@ -127,6 +130,7 @@ function controls(main_canvas_id) {
         };
     });
     $('.tabs-ierarchy').on('click', (e) => {
+        selectText('h1');
         let tabs = $('.tabs-ierarchy');
         let divsResult = $('.div-result');//
         for(let i = tabs.length - 1; i>-1;i--){
@@ -232,6 +236,9 @@ function controls(main_canvas_id) {
                 // contentType: false,
                 // processData: false,
                 success: function(response){
+
+                    main_state['all_lines'] = response['all_lines'];
+
                     file_code_tab(response);
 
                     element_code_tab();
@@ -257,9 +264,28 @@ function controls(main_canvas_id) {
 
 
         // }
+        $('.tabs-ierarchy')[1].click(); // поменять на 0
+
     })
 
     $('.copyText').on('click', (event)=>{
+
+        let w_1 = Object.keys(main_state['all_lines']).length;
+
+        let d = '';
+
+        let result_txt = ''; 
+
+        for(let i = 0; i<w_1; i++){
+            d = main_state['all_lines'][i];
+            result_txt = result_txt + d.replace(/<pre.*span>|<\/pre>/g, "");
+        };
+
+        // console.log(result_txt);
+
+
+
+
         event.preventDefault();
         var file_code = $('.file-code-inside').text();
         function copyToClipboard(text) {
@@ -270,10 +296,10 @@ function controls(main_canvas_id) {
             document.execCommand("copy");
             document.body.removeChild(dummy);
         }
-        copyToClipboard(file_code);
-        $('.tabs-ierarchy')[main_state.tab_position-1].click();
-    });
+        copyToClipboard(result_txt);
 
+
+    });
 
     $('#button_error_ok').on('click', () => {
         error_window_close();
@@ -345,5 +371,9 @@ function controls(main_canvas_id) {
     }
     });
     g.observe(document.getElementById('result')); 
+
+    $('.tabs-ierarchy')[0].click();
+
+
 };
 export {controls};
