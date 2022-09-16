@@ -87,7 +87,7 @@ div.div-file-code, div.div-element-code div.div-call-stack{
 div.div-file-code div.div-element-code{
   position: relative;
 }
-div.file-numbers-of-lines-inside, div.element-numbers-of-lines-inside, div.div-element-code-inside{
+div.file-numbers-of-lines-inside, div.element-numbers-of-lines-inside {
   position: absolute;
   padding: 5px;
 }
@@ -107,7 +107,7 @@ pre {
   padding-left: 40px;
   text-indent: -35px;
 }
-code, .file-code-inside {
+code, .file-code-inside, .element-code-inside {
   font-family: ui-monospace, "Cascadia Mono", "Segoe UI Mono", "Liberation Mono", Menlo, Monaco, Consolas, monospace;
   font-size: 14px;
   font-style: normal;

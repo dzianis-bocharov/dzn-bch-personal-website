@@ -1,25 +1,14 @@
+function element_code_tab(main_state) {
 
-const element = [];
+    //---ПОЧИНИТЬ!---
+    let first_line = 6576;
+    let last_line = 7303;
 
-function element_code_tab(element) {
-    // $('.element-numbers-of-lines-inside').html('');
-    //   // var file_data = new FormData();//ВКЛЮЧИТЬ!!!
-    //   // var file_js = $('#file2')[0].files[0];
-    //   // file_data.append('file_js',file_js);
-    //   $.ajax({
-    //       url: 'php/js-element-code.php',
-    //       type: 'POST',
-    //       // data: file_data,
-    //       // contentType: false,
-    //       // processData: false,
-    //       success: function(response){
-    //         $('.element-code-inside').html(response);
-    //       }
-    //   });
+    let text_for_export = '';
+    for (let i = first_line-1; i < last_line; i++) {
+        text_for_export = text_for_export + main_state['all_lines'][i];
+    };
+    $('#element-code-inside').html(text_for_export);
 };
-
-
-
-
 
 export {element_code_tab};

@@ -98,9 +98,9 @@
                         <div id = 'file-code-inside' class='file-code-inside div-file-code-inside'></div>    
                     </div>
                     <div tabindex="0" class="div-element-scheme div-result tab-back">схема для элемента</div>
-                    <div id='element-code' tabindex="0" class="div-element-code div-result tab-back">
+                    <div id='element-code' tabindex="0" class="div-element-code div-result tab-back ">
                         <div class='element-numbers-of-lines-inside div-element-code-inside unselectable'>...</div>    
-                        <div class='element-code-inside div-element-code-inside'></div>    
+                        <div id='element-code-inside' class='element-code-inside div-element-code-inside'></div>    
                     </div>
                     <div id='call-stack' tabindex="0" class="div-call-stack div-result tab-back">...</div>
                 </div>

@@ -1,4 +1,5 @@
 <?php
+
     function js_file_data_all($file_js){
 
         $result = [];
@@ -45,9 +46,15 @@
 //---------- call-stack ------------------------------------------------------------------------------
 
         require 'js-elements-extractor.php';
-        $call_stack = js_elements_extractor($file_js, $all_lines, $the_only_class_return);
+        $call_stack = js_elements_extractor($file_js, $all_lines[1], $the_only_class_return);
         // echo '<br>';
+
+        $g = 1;
+
         function call_stack_show_recursive($call_stack) {
+
+            // $g = 2;
+
             foreach($call_stack as &$element){
                 $braces = null;
                 $path=$element['path'];
@@ -68,16 +75,23 @@
                     call_stack_show_recursive($element['children']);
                 };
             }
+            // return $g;
         };
         $path = null;
-        call_stack_show_recursive($call_stack);
+        
+        $g = call_stack_show_recursive($call_stack);
 
         $result['file_name'] = $file_name;
         $result['all_lines'] = $all_lines[0];
         $result['list_of_functions'] = $all_lines[1];
-        $result[3] = 4;
+        $result['call_stack'] = $call_stack;
+        // $result['call_stack'] = 'test123';
 
         return $result;
     };
 
+    //---СТЕРЕТЬ---
+    // $f = js_file_data_all($file_js);
+
+    // print_r($f['call_stack']);
 ?>

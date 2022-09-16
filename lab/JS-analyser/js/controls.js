@@ -12,8 +12,6 @@ import {file_code_tab } from './file-code-tab.js';
 
 //----------выделение текста внутри div---------------------------------------------------------------
 
-
-
 function selectText(containerid) {
     if (document.selection) { // IE
         var range = document.body.createTextRange();
@@ -29,13 +27,16 @@ function selectText(containerid) {
 
 //----------главное состояние-------------------------------------------------------------------------
 
+//---ЗАКЛАДКА!---
+
 const main_state = {
     tab_position: 1,
     file_name : '',
     all_lines : '',
     list_of_functions : '',
     call_stack : '',
-    current_element : ''
+    //---ПОЧИНИТЬ!---
+    current_element : {first_line: 6576, last_line: 7303}
 };
 
 // import {css_element_check_tool} from './css-element-check-tool.js';
@@ -92,7 +93,6 @@ function controls(main_canvas_id) {
         document.getElementById('file1').value = '';
         document.getElementById('file2').value = '';
         $('.file-numbers-of-lines-inside').html('...');
-        $('.element-numbers-of-lines-inside').html('...');
         $('.file-code-inside').html('');
         $('.element-code-inside').html('');
         $('.div-call-stack').html('...');
@@ -180,7 +180,7 @@ function controls(main_canvas_id) {
         event.preventDefault();
         $('.div-result').scrollTop(0);
         $('#error_message').html('');
-        $('.tabs-ierarchy')[1].click(); // поменять на 0
+        $('.tabs-ierarchy')[0].click();
 
 //----------ВКЛЮЧИТЬ----------------------------------------------------------------------------------
         // if($('#test1').is(':checked') && (!$('#file1')[0].files[0] || !$('#file2')[0].files[0])){
@@ -224,6 +224,7 @@ function controls(main_canvas_id) {
 
         function extract_data() {
          $('.file-numbers-of-lines-inside').html('');
+         $('.element-numbers-of-lines-inside').html('');
             //---ВКЛЮЧИТЬ!---
             // var file_data = new FormData();
             // var file_js = $('#file2')[0].files[0];
@@ -238,11 +239,26 @@ function controls(main_canvas_id) {
                 success: function(response){
 
                     main_state['all_lines'] = response['all_lines'];
+                    main_state['call_stack'] = response['call_stack'];
+
+                    // console.log(main_state['call_stack']);
 
                     file_code_tab(response);
+                    
 
-                    element_code_tab();
-                    element_code_tab();
+                    //---ПОЧИНИТЬ!---
+                    main_state['current_element'] = {first_line:6576,last_line:7303};
+                    // main_state['current_element'] = {};
+                    // main_state['current_element']['last_line'] = 7303;
+
+                    // main_state.current_element.first_line = 6576;
+                    // main_state.current_element.last_line = 7303;
+
+
+                    //---ЗАКЛАДКА2---
+
+                    element_code_tab(main_state);
+
                     call_stack_tab();
 
                     file_ierarchy_scheme_tab(ctx, main_canvas_id);
@@ -264,11 +280,11 @@ function controls(main_canvas_id) {
 
 
         // }
-        $('.tabs-ierarchy')[1].click(); // поменять на 0
+        $('.tabs-ierarchy')[3].click(); // поменять на 0
 
     })
 
-    $('.copyText').on('click', (event)=>{
+    $('.copyText').on('click', (event)=>{inside
 
         let w_1 = Object.keys(main_state['all_lines']).length;
 
@@ -341,7 +357,35 @@ function controls(main_canvas_id) {
 
         if (zEvent.ctrlKey && zEvent.code === 'KeyA') {
             zEvent.preventDefault();
-            selectText('file-code-inside'); 
+
+            // console.log(main_state.tab_position);
+
+            // selectText('file-code-inside'); 
+            // selectText('element-code-inside'); 
+            // selectText('call-stack'); 
+
+            // console.log(main_state.tab_position);
+            // let tab_id = main_state.tab_position;
+
+            if (main_state.tab_position == 2) {
+                selectText('file-code-inside'); 
+            } else if (main_state.tab_position == 4) {
+                selectText('element-code-inside'); 
+            } else if (main_state.tab_position == 5) {
+                selectText('call-stack'); 
+            };
+
+
+            // const main_state = {
+            //     tab_position: 1,
+            //     file_name : '',
+            //     all_lines : '',
+            //     list_of_functions : '',
+            //     call_stack : '',
+            //     //---ПОЧИНИТЬ!---
+            //     current_element : {first_line: 6576, last_line: 7303}
+            // };
+
         };
 
 
